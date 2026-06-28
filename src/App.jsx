@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
 import WhyTheName from './components/WhyTheName'
@@ -34,6 +35,7 @@ export default function App() {
         </main>
       )}
       <Footer onJoinBeta={goEnquiry} />
+      <Analytics />
     </>
   )
 }
