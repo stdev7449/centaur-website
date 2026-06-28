@@ -2,29 +2,28 @@ import { useState } from 'react'
 
 const CRM_LEADS_URL = 'https://app.centaurcrm.com/api/leads/submit'
 
+const INDUSTRIES = [
+  '', 'Technology', 'Financial Services', 'Professional Services', 'Manufacturing',
+  'Retail & E-commerce', 'Healthcare', 'Construction & Real Estate', 'Media & Marketing',
+  'Logistics & Transport', 'Education', 'Other',
+]
+
+const USER_COUNTS = ['', 'Just me', '2–5', '6–15', '16–50', '50+']
+
 const BENEFITS = [
-  {
-    title: 'Early access',
-    desc: 'Get Centaur CRM before it\'s publicly available.',
-  },
-  {
-    title: 'Locked-in Beta pricing',
-    desc: 'Your rate stays fixed — even as we grow.',
-  },
-  {
-    title: 'Shape the product',
-    desc: 'Direct line to the founder. Your feedback drives what gets built next.',
-  },
-  {
-    title: 'One-on-one onboarding',
-    desc: 'We\'ll set you up personally — not a generic tutorial.',
-  },
+  { title: 'Early access',        desc: 'Get Centaur CRM before it\'s publicly available.' },
+  { title: 'Locked-in Beta pricing', desc: 'Your rate stays fixed — even as we grow.' },
+  { title: 'Shape the product',   desc: 'Direct line to the founder. Your feedback drives what gets built next.' },
+  { title: 'One-on-one onboarding', desc: 'We\'ll set you up personally — not a generic tutorial.' },
 ]
 
 export default function Enquiry({ onBack }) {
-  const [form, setForm]       = useState({ firstName: '', lastName: '', email: '', phone: '', company: '', message: '' })
-  const [status, setStatus]   = useState('idle') // idle | submitting | success | error
-  const [errMsg, setErrMsg]   = useState('')
+  const [form, setForm] = useState({
+    firstName: '', lastName: '', email: '', phone: '', company: '',
+    industry: '', userCount: '', currentCrm: '', message: '',
+  })
+  const [status, setStatus] = useState('idle')
+  const [errMsg, setErrMsg] = useState('')
 
   const set = (k, v) => setForm(f => ({ ...f, [k]: v }))
 
@@ -97,70 +96,62 @@ export default function Enquiry({ onBack }) {
                 <div className="form-row">
                   <div className="form-field">
                     <label htmlFor="firstName">First name *</label>
-                    <input
-                      id="firstName"
-                      type="text"
-                      required
-                      placeholder="Sarah"
-                      value={form.firstName}
-                      onChange={e => set('firstName', e.target.value)}
-                    />
+                    <input id="firstName" type="text" required placeholder="Sarah"
+                      value={form.firstName} onChange={e => set('firstName', e.target.value)} />
                   </div>
                   <div className="form-field">
                     <label htmlFor="lastName">Last name</label>
-                    <input
-                      id="lastName"
-                      type="text"
-                      placeholder="Mitchell"
-                      value={form.lastName}
-                      onChange={e => set('lastName', e.target.value)}
-                    />
+                    <input id="lastName" type="text" placeholder="Mitchell"
+                      value={form.lastName} onChange={e => set('lastName', e.target.value)} />
                   </div>
                 </div>
 
                 <div className="form-field">
                   <label htmlFor="email">Work email *</label>
-                  <input
-                    id="email"
-                    type="email"
-                    required
-                    placeholder="sarah@company.com"
-                    value={form.email}
-                    onChange={e => set('email', e.target.value)}
-                  />
+                  <input id="email" type="email" required placeholder="sarah@company.com"
+                    value={form.email} onChange={e => set('email', e.target.value)} />
                 </div>
 
                 <div className="form-row">
                   <div className="form-field">
                     <label htmlFor="phone">Phone</label>
-                    <input
-                      id="phone"
-                      type="tel"
-                      placeholder="+44 7700 900000"
-                      value={form.phone}
-                      onChange={e => set('phone', e.target.value)}
-                    />
+                    <input id="phone" type="tel" placeholder="+44 7700 900000"
+                      value={form.phone} onChange={e => set('phone', e.target.value)} />
                   </div>
                   <div className="form-field">
                     <label htmlFor="company">Company</label>
-                    <input
-                      id="company"
-                      type="text"
-                      placeholder="Acme Ltd"
-                      value={form.company}
-                      onChange={e => set('company', e.target.value)}
-                    />
+                    <input id="company" type="text" placeholder="Acme Ltd"
+                      value={form.company} onChange={e => set('company', e.target.value)} />
+                  </div>
+                </div>
+
+                <div className="form-row">
+                  <div className="form-field">
+                    <label htmlFor="industry">Industry</label>
+                    <select id="industry" value={form.industry} onChange={e => set('industry', e.target.value)}>
+                      {INDUSTRIES.map(i => <option key={i} value={i}>{i || 'Select industry…'}</option>)}
+                    </select>
+                  </div>
+                  <div className="form-field">
+                    <label htmlFor="userCount">CRM users in your team</label>
+                    <select id="userCount" value={form.userCount} onChange={e => set('userCount', e.target.value)}>
+                      {USER_COUNTS.map(u => <option key={u} value={u}>{u || 'Select…'}</option>)}
+                    </select>
                   </div>
                 </div>
 
                 <div className="form-field">
+                  <label htmlFor="currentCrm">What CRM tools do you currently use?</label>
+                  <input id="currentCrm" type="text"
+                    placeholder="e.g. Salesforce, HubSpot, spreadsheets, nothing yet…"
+                    value={form.currentCrm} onChange={e => set('currentCrm', e.target.value)} />
+                </div>
+
+                <div className="form-field">
                   <label htmlFor="message">Tell us about your sales role</label>
-                  <textarea
-                    id="message"
+                  <textarea id="message"
                     placeholder="What do you sell, how big is your team, and what's your biggest CRM frustration right now?"
-                    value={form.message}
-                    onChange={e => set('message', e.target.value)}
-                  />
+                    value={form.message} onChange={e => set('message', e.target.value)} />
                 </div>
 
                 <div className="form-submit">
