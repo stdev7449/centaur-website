@@ -10,13 +10,26 @@ import HowItWorks from './components/HowItWorks'
 import BetaCta from './components/BetaCta'
 import Enquiry from './components/Enquiry'
 import Footer from './components/Footer'
+import ComingSoon from './components/ComingSoon'
 import './App.css'
+
+// Flip to false and redeploy to bring the full site back up.
+const COMING_SOON = true
 
 export default function App() {
   const [view, setView] = useState('home')
 
   const goEnquiry = () => { setView('enquiry'); window.scrollTo(0, 0) }
   const goHome    = () => { setView('home');    window.scrollTo(0, 0) }
+
+  if (COMING_SOON) {
+    return (
+      <>
+        <ComingSoon />
+        <Analytics />
+      </>
+    )
+  }
 
   return (
     <>
