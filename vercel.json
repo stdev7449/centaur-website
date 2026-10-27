@@ -1,4 +1,9 @@
 {
+  "framework": null,
+  "installCommand": "echo 'static site: nothing to install'",
+  "buildCommand": "echo 'static site: nothing to build'",
+  "outputDirectory": "site",
+  "cleanUrls": false,
   "headers": [
     {
       "source": "/(.*)",
@@ -8,7 +13,7 @@
         { "key": "Strict-Transport-Security",  "value": "max-age=63072000; includeSubDomains; preload" },
         { "key": "Referrer-Policy",            "value": "strict-origin-when-cross-origin" },
         { "key": "Permissions-Policy",         "value": "camera=(), microphone=(), geolocation=()" },
-        { "key": "Content-Security-Policy",    "value": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://app.centaurcrm.com; img-src 'self' data: https:; font-src 'self' data:; frame-ancestors 'none'" }
+        { "key": "Content-Security-Policy",    "value": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; form-action 'self' https://app.centaurcrm.com https://www.centaurcrm.com https://centaurcrm.com; base-uri 'self'; object-src 'none'; frame-ancestors 'none'" }
       ]
     }
   ]
