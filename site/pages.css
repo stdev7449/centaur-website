@@ -105,3 +105,4 @@ details.faq p { margin-top: 10px; }
 .btn.ghost { background: transparent; color: var(--text); border: 1px solid var(--line); }
 .btn.ghost:hover { background: var(--surface); border-color: var(--violet); }
 @media (max-width: 760px) { .doc .two { grid-template-columns: 1fr; } .cta-box { padding: 24px; } .wrap { padding: 0 16px; } }
+.story-quote { margin-top: 28px !important; padding-left: 18px; border-left: 3px solid var(--violet); font-family: Georgia, "Times New Roman", serif; font-style: italic; font-size: 1.3rem; color: var(--text) !important; }

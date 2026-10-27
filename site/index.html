@@ -159,6 +159,16 @@
   .hero canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
   .hero .wrap { position: relative; z-index: 2; padding-top: 34px; padding-bottom: 92px; }
   .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 54px; align-items: start; }
+  .hero-top { max-width: 860px; margin: 0 auto; text-align: center; }
+  .hero-top .lead { max-width: 64ch; margin-left: auto; margin-right: auto; }
+  .hero-top .hero-actions { justify-content: center; }
+  .hero-shot { margin: 48px auto 0; max-width: 1100px; }
+  .hero-shot .panel { box-shadow: var(--shadow-float); }
+  .hero-shot img { display: block; width: 100%; height: auto; }
+  .hero-shot figcaption { margin: 18px auto 0; max-width: 70ch; text-align: center; color: var(--text-dim); font-size: 1.02rem; }
+  .hero-shot figcaption b { display: block; font-family: "Archivo", sans-serif; font-size: clamp(1.3rem, 2.6vw, 1.7rem); color: #fff; margin-bottom: 6px; letter-spacing: -0.01em; }
+  .story-link { display: inline-block; margin-left: 6px; color: var(--violet-bright); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+  @media (max-width: 600px) { .hero-top { text-align: left; } .hero-top .hero-actions { justify-content: flex-start; } .hero-shot { margin-top: 32px; } .hero-shot figcaption { text-align: left; } }
   @media (min-width: 961px) { .hero .panel { margin-top: 26px; } }
   @media (max-width: 960px) { .hero-grid { grid-template-columns: 1fr; gap: 40px; } }
 
@@ -531,36 +541,26 @@
   <section class="hero">
     <canvas id="heroCanvas" aria-hidden="true"></canvas>
     <div class="wrap">
-      <div class="hero-grid">
-        <div>
-          <span class="eyebrow">The AI-native CRM</span>
-          <h1>How much more would your reps sell if they didn't have to worry about <span class="glow">admin?</span></h1>
-          <p class="lead">
-            Anyone in sales knows how hard it can be to manage deals, stay on top of the CRM
-            and still make time to prospect for new business and generate leads. The busier
-            we get, the harder it is to keep on top of everything, and the first thing to be
-            neglected is updating the CRM. Imagine a system so tuned in to you and your
-            business that it takes notes in all your meetings, reads all your emails and
-            simply takes care of the CRM for you.
-          </p>
-          <p class="lead">
-            Well, no need to imagine anymore. Centaur CRM does all this and more.
-          </p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#enquire" data-reason="demo">Book a demo</a>
-            <a class="btn btn-ghost" href="#beta">Join the beta</a>
-          </div>
-          <p class="hero-note">// live the same day · no implementation cost · bring your own AI</p>
+      <div class="hero-top">
+        <span class="eyebrow">The AI-native CRM</span>
+        <h1>How much more would your reps sell <span class="glow">without the admin?</span></h1>
+        <p class="lead">Centaur is the CRM with six AI agents built in. They answer enquiries, book meetings and keep every deal up to date from your emails and calls, so your reps can get back to selling.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#enquire" data-reason="demo">Book a demo</a>
+          <a class="btn btn-ghost" href="#beta">Join the beta</a>
         </div>
-
-        <div class="panel" role="img" aria-label="Real capture: a rep's Today page, showing what needs them first and how they're tracking against target">
-          <div class="panel-head">
-            <span class="panel-title"><span class="dot"></span> Today</span>
-            <span class="panel-tag">real capture · demo workspace</span>
-          </div>
-          <img class="panel-shot" src="shots/today.jpg" width="1600" height="637" alt="Centaur CRM Today page: three things that need the rep today, with progress against the year's target" fetchpriority="high" />
-        </div>
+        <p class="hero-note">// live the same day · no implementation cost · bring your own AI</p>
       </div>
+      <figure class="hero-shot">
+        <div class="panel">
+          <div class="panel-head">
+            <span class="panel-title"><span class="dot"></span> Your AI agents</span>
+            <span class="panel-tag">real app · demo workspace</span>
+          </div>
+          <img src="shots/ai-activity.jpg" width="1600" height="637" alt="Centaur CRM AI Activity page: in the last 7 days the agents drafted 8 emails, opened 2 deals worth £61,291, made 25 updates to deals from email and prepared 5 meeting briefs" fetchpriority="high" />
+        </div>
+        <figcaption><b>Last week, the agents did the admin.</b> 8 replies drafted, 2 deals opened worth £61k, 25 deal updates and 5 meeting briefs, while the rep got on with selling.</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -568,11 +568,9 @@
   <section class="claim-band">
     <div class="wrap claim-inner">
       <p class="claim-line">No overpriced AI. <span>No restrictions.</span></p>
-      <p class="claim-sub"><strong>Zero markup on AI usage.</strong> Centaur CRM is built around AI, but
-        unlike other CRM tools that charge a premium for AI features, add huge markups or restrict
-        usage with AI credit allowances, we wanted Centaur to be more affordable and more transparent.
-        You connect your own AI provider — the tokens are billed to you, by them, at their rate.
-        Centaur doesn't touch it, doesn't resell it and doesn't hide a margin inside a tier.</p>
+      <p class="claim-sub"><strong>Zero markup on AI usage.</strong> Other CRMs charge a premium for AI
+        or ration it with credits. With Centaur, you connect your own AI provider and pay them directly,
+        at their rate. We don't resell it or hide a margin in it.</p>
       <div class="trust-chips">
         <span class="trust-chip">Built by a 30-year sales veteran</span>
         <span class="trust-chip">Beta cohort open now</span>
@@ -591,44 +589,18 @@
         <div class="why-body">
           <p>
             <strong>Centaur was founded and built by a sales professional with 30 years of
-            selling experience — not by a software developer.</strong>
+            selling experience, not by a software developer.</strong>
           </p>
           <p>
-            Imagine if you had the opportunity to build a CRM that did exactly what you
-            wanted to make your job easier: something that helps you manage deals from the
-            first inquiry right through to closing, where all you have to do is show up to
-            the meetings and the CRM does the rest, automatically.
+            For years I was torn between selling and updating the CRM. I implemented CRMs for my
+            teams and always had a long list of things I wanted them to do, but the answer was always
+            the same: it can't, buy another tool, or pay a consultant. So I built my own: a CRM where
+            you show up to the meetings and it does the rest, and every deal is exactly where it should
+            be when you walk into your pipeline review.
           </p>
           <p>
-            Imagine if your CRM were completely up to date, all the time, so that when you
-            have your pipeline review with your manager, every deal is exactly where it needs
-            to be: close date, pipeline stage, deal value, qualification and forecast status.
-            Imagine walking into that meeting confident of the number you're carrying.
-          </p>
-          <p>
-            Well, this is what I imagined… and now it's a reality!
-          </p>
-          <p>
-            For too long, I was torn between spending more time selling and making time to
-            update the CRM. The busier we get as sales professionals, the less time we have
-            for admin, writing follow-up emails or even trying to generate new leads. There
-            are only so many hours in the day, and I wanted to spend as many of them as I
-            could talking to customers and moving deals forward, not wasting time on admin!
-          </p>
-          <p>
-            <strong>If this sounds familiar, I built Centaur for you!</strong>
-          </p>
-          <p>
-            You see, I know CRM tools. I've implemented a couple in my years as a sales guy,
-            and let me tell you, I had a huge list of things I wanted to be able to do to make
-            my team's lives easier, but there were always too many blockers. Either the
-            solution couldn't do it, or we'd have to buy another tool and integrate it, or it
-            would cost a fortune to bring in a consultant to build it. So I decided enough
-            was enough and built my own.
-          </p>
-          <p>
-            The problem was, it turned out better than I ever expected. It was too good to
-            keep to myself, so now I'm offering it to you.
+            It turned out too good to keep to myself. <strong>If this sounds familiar, I built Centaur for you.</strong>
+            <a class="story-link" href="our-story.html">Read the full story →</a>
           </p>
           <p class="pullquote">
             If you could give every rep an assistant for the price of a cup of coffee every day — one that
@@ -660,24 +632,14 @@
         <span class="eyebrow">AI in the fabric, not on top</span>
         <h2>Every other CRM added AI. <span class="hl">Centaur is made of it.</span></h2>
         <p class="lead">
-          AI is truly amazing when it's done right. Every business in the world is looking at
-          its processes to see where AI can make it more efficient and reduce costs. We believe
-          AI will never replace people. While we think we've created some pretty charismatic
-          AI agents, they'll never have the empathy and emotion of a real person, which matter
-          so much when building relationships with real customers.
+          AI will never replace people: it can't match the empathy a real person brings to a
+          customer relationship. But it can take on the work around them. Centaur was born in the
+          age of AI and built around it, not bolted onto a product designed years before.
         </p>
         <p class="lead">
-          What sets Centaur apart from the big names in CRM is that it was born in the age of
-          AI and built around it, instead of having AI bolted onto a legacy product built
-          years ago.
-        </p>
-        <p class="lead">
-          For AI to truly succeed at the task it's given, context is everything, and this is
-          what we believe Centaur does exceptionally well. You train Centaur just like you would
-          any new sales rep: tell it about your business, your products and your USPs, then tell
-          it about your competitors, your sales process and the methodology you use to qualify
-          opportunities, and it has everything it needs to do the job. When we say it just works, we really
-          mean it… and the only way to understand is to try it for yourself.
+          Context is everything. You train Centaur like a new rep: your business, products,
+          competitors, sales process and how you qualify deals. Then it just works, and the best way
+          to see it is to try it.
         </p>
       </div>
       <div class="vs">
@@ -735,8 +697,8 @@
               roughly how many seats would you be looking at?"</p>
           </div>
           <div class="mini">
-            <div class="mini-h"><span>AI Activity · real capture</span><span>last 7 days</span></div>
-            <img class="mini-shot" src="shots/ai-activity.jpg" width="1600" height="637" alt="Centaur CRM AI Activity tab summing up the agents' week: emails drafted, deals opened, deal updates and meeting briefs" loading="lazy" />
+            <div class="mini-h"><span>Today · real capture</span><span>drafts waiting</span></div>
+            <img class="mini-shot" src="shots/today.jpg" width="1600" height="637" alt="Centaur CRM Today page: AI drafts waiting for the rep's approval, a deal at risk, and progress against target" loading="lazy" />
           </div>
         </div>
 
