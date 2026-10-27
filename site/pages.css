@@ -78,3 +78,30 @@ footer { background: var(--ground-2); color: var(--text-mute); border-top: 1px s
 .foot { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
 .foot-links { display: flex; gap: 22px; flex-wrap: wrap; }
 .foot a:hover { color: var(--violet-bright); }
+
+/* Compare and FAQ pages */
+.ac { color: var(--violet-bright); }
+.page-head .lead a, .doc a { color: var(--violet-bright); text-decoration: underline; text-underline-offset: 2px; }
+.doc.wide { max-width: none; padding-bottom: 40px; }
+.doc .small { margin-top: 10px; font-size: 12.5px; color: var(--text-mute); }
+.doc .two { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 14px; }
+.doc .two h3 { margin-top: 6px; }
+.doc .prov p { margin-top: 6px; }
+.q-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 14px; }
+table.cmp { min-width: 760px; font-size: 14px; }
+table.cmp thead th { color: #fff; }
+table.cmp thead th:nth-child(2), table.cmp td:nth-child(2) { color: var(--text); background: rgba(139,124,246,0.08); }
+table.cmp tbody th { white-space: nowrap; color: var(--violet-bright); font-weight: 600; }
+details.faq { border-bottom: 1px solid var(--line); padding: 14px 0; }
+details.faq summary { cursor: pointer; font-weight: 600; color: var(--text); list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+details.faq summary::-webkit-details-marker { display: none; }
+details.faq summary::after { content: "+"; color: var(--violet-bright); font-weight: 700; }
+details.faq[open] summary::after { content: "–"; }
+details.faq p { margin-top: 10px; }
+.cta-box { margin: 20px 0 80px; padding: 36px; border-radius: var(--r-l); border: 1px solid var(--line); background: radial-gradient(80% 140% at 10% 0%, rgba(120,104,240,0.18), transparent 70%), var(--surface); }
+.cta-box h2 { font-size: clamp(1.5rem, 3.4vw, 2rem); }
+.cta-box p { margin: 12px 0 0; color: var(--text-dim); max-width: 60ch; }
+.cta-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
+.btn.ghost { background: transparent; color: var(--text); border: 1px solid var(--line); }
+.btn.ghost:hover { background: var(--surface); border-color: var(--violet); }
+@media (max-width: 760px) { .doc .two { grid-template-columns: 1fr; } .cta-box { padding: 24px; } .wrap { padding: 0 16px; } }
