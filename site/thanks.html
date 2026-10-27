@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Thank you · Centaur CRM</title>
+<meta name="description" content="Thanks for getting in touch with Centaur CRM." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Hanken+Grotesque:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" />
+<link rel="stylesheet" href="pages.css" />
+<meta name="robots" content="noindex" />
+<style>
+  .thanks { min-height: 56vh; display: grid; place-items: center; text-align: center; padding: 60px 0 80px; }
+  .thanks .mark { width: 72px; height: 72px; margin: 0 auto 22px; filter: drop-shadow(0 0 22px rgba(139,124,246,0.6)); }
+  .thanks h1 { margin-top: 14px; }
+  .thanks .lead { margin: 16px auto 0; max-width: 52ch; }
+  .thanks .acts { margin-top: 30px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .thanks .btn.ghost { background: transparent; color: var(--text, #ECECF2); border: 1px solid var(--line, #272433); }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="Centaur CRM home">
+      <svg viewBox="0 0 100 100" aria-hidden="true">
+        <g transform="translate(4 6)" stroke="#8B7CF6" stroke-width="2.5" opacity="0.55" stroke-linecap="round">
+          <line x1="58" y1="57" x2="72" y2="42"/><line x1="58" y1="57" x2="34" y2="64"/><line x1="34" y1="64" x2="22" y2="46"/>
+          <line x1="22" y1="46" x2="32" y2="28"/><line x1="32" y1="28" x2="50" y2="17"/><line x1="50" y1="17" x2="72" y2="42"/>
+          <line x1="72" y1="42" x2="32" y2="28"/><line x1="58" y1="57" x2="74" y2="72"/>
+        </g>
+        <g transform="translate(4 6)" fill="#8B7CF6">
+          <circle cx="58" cy="57" r="8"/><circle cx="72" cy="42" r="5.5"/><circle cx="50" cy="17" r="4"/>
+          <circle cx="32" cy="28" r="3.5"/><circle cx="22" cy="46" r="3"/><circle cx="34" cy="64" r="3.5"/><circle cx="74" cy="72" r="2.5"/>
+        </g>
+      </svg>
+      <span>Centaur <span class="nm-2">CRM</span></span>
+    </a>
+    <div class="nav-cta">
+      <a class="back" href="index.html">← Back to home</a>
+      <a class="btn" href="index.html#beta">Join the beta</a>
+    </div>
+  </div>
+</header>
+<main>
+  <section class="thanks">
+    <div class="wrap">
+      <svg class="mark" viewBox="0 0 100 100" aria-hidden="true">
+        <g transform="translate(4 6)" stroke="#8B7CF6" stroke-width="2.5" opacity="0.55" stroke-linecap="round">
+          <line x1="58" y1="57" x2="72" y2="42"/><line x1="58" y1="57" x2="34" y2="64"/><line x1="34" y1="64" x2="22" y2="46"/>
+          <line x1="22" y1="46" x2="32" y2="28"/><line x1="32" y1="28" x2="50" y2="17"/><line x1="50" y1="17" x2="72" y2="42"/>
+          <line x1="72" y1="42" x2="32" y2="28"/><line x1="58" y1="57" x2="74" y2="72"/>
+        </g>
+        <g transform="translate(4 6)" fill="#8B7CF6">
+          <circle cx="58" cy="57" r="8"/><circle cx="72" cy="42" r="5.5"/><circle cx="50" cy="17" r="4"/>
+          <circle cx="32" cy="28" r="3.5"/><circle cx="22" cy="46" r="3"/><circle cx="34" cy="64" r="3.5"/><circle cx="74" cy="72" r="2.5"/>
+        </g>
+      </svg>
+      <div id="ok">
+        <span class="eyebrow">Message sent</span>
+        <h1>Thanks for getting in touch.</h1>
+        <p class="lead">We've got your message, and a real person will reply within one working day. Keep an eye on your inbox, and check your spam folder just in case.</p>
+        <div class="acts">
+          <a class="btn" href="index.html">Back to home</a>
+          <a class="btn ghost" href="index.html#agents">Meet the agents</a>
+        </div>
+      </div>
+      <div id="err" hidden>
+        <span class="eyebrow">Something wasn't quite right</span>
+        <h1>We couldn't send that.</h1>
+        <p class="lead">Please check your email address and message, then try again. If it still won't send, email us at <a href="mailto:info@centaurcrm.com">info@centaurcrm.com</a>.</p>
+        <div class="acts">
+          <a class="btn" href="index.html#enquire">Back to the form</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<script>
+  if (/[?&]error=1/.test(location.search)) { document.getElementById("ok").hidden = true; document.getElementById("err").hidden = false; }
+</script>
+<footer>
+  <div class="wrap foot">
+    <div>© 2026 Centaur CRM</div>
+    <div class="foot-links">
+      <a href="index.html">Home</a>
+      <a href="security.html">Security</a>
+      <a href="privacy.html">Privacy</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
