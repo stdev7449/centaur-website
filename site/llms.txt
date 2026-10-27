@@ -1,0 +1,38 @@
+# Centaur CRM
+
+> Centaur CRM is an AI-native CRM for B2B sales teams, with six built-in AI sales agents that answer inbound enquiries, qualify prospects, book meetings, keep deals up to date and prepare reps for calls. It works with Microsoft 365 (Outlook, calendar and Teams). Customers connect their own AI provider and pay it directly, so there is no AI markup and no AI credit allowance. Centaur is in an open beta.
+
+Centaur was founded and built by a sales professional with 30 years of selling experience. The idea: reps should spend their time selling, and the CRM should keep itself up to date from their emails, calls and meetings.
+
+## What it does
+
+- **Outreach agent ("The Opener"):** replies to inbound enquiries in the rep's voice, qualifies against the team's own methodology (for example BANT or MEDDPIC), handles objections from the team's battle cards, offers real free times from the rep's calendar, books the meeting and creates the account, contact and opportunity. It can draft replies for a person to approve, or run on its own.
+- **Opportunity agent ("The Analyst"):** reads emails and call notes on open deals and updates budget, stakeholders, timeline and competitors, keeps a running deal summary and flags risks with the exact quote. It never sends anything itself and never overwrites a figure a person typed in.
+- **Meeting brief agent ("The Briefer"):** each morning, writes a brief for every call on the calendar, with the deal's history and web research on the company.
+- **Call notes ("The Scribe"):** turns recorded Microsoft Teams calls into a summary of what was discussed, what was agreed and the next steps, and fills in blank fields on the deal.
+- **Sequences ("The Copywriter"):** writes a personal version of each email in an outreach sequence; a rep approves every one before it is sent.
+- **Assistant ("The Co-pilot"):** answers questions about the pipeline in plain English and makes changes only after the user clicks Apply.
+- **A complete CRM underneath:** pipeline and forecasting with forecast automation, multi-currency deals, workflow automation, custom dashboards and reports, email campaigns and landing pages, lead routing, prospecting through a connected data provider such as Apollo, detailed roles and permissions, an audit trail, Slack and Teams notifications, and built-in training guides.
+
+## Good fit
+
+- B2B sales teams on Microsoft 365 who want inbound enquiries answered and qualified quickly without hiring more people.
+- Teams that want a CRM that stays up to date from email and calls instead of manual data entry.
+- Teams that want AI without paying a CRM vendor's AI markup or counting credits.
+
+## Not a fit (today)
+
+- Teams on Google Workspace email: only Microsoft 365 is supported for now.
+
+## Getting started
+
+Same-day setup with no implementation fee and no consultants: a guided setup drafts a brief about the business from its website, imports existing spreadsheets, and sends the IT admin the Microsoft 365 steps. Beta customers keep a lifetime discount. Contact: info@centaurcrm.com.
+
+## Links
+
+- [Home page](https://www.centaurcrm.com/): the product, the agents, screenshots and the beta
+- [Product overview (PDF)](https://www.centaurcrm.com/downloads/centaur-crm-product-overview.pdf)
+- [Meet the agents (PDF)](https://www.centaurcrm.com/downloads/centaur-crm-meet-the-agents.pdf)
+- [How Centaur compares with Salesforce, HubSpot, monday CRM, Dynamics 365 and Pipedrive (PDF)](https://www.centaurcrm.com/downloads/centaur-crm-how-centaur-compares.pdf)
+- [Security](https://www.centaurcrm.com/security.html)
+- [Privacy](https://www.centaurcrm.com/privacy.html)
