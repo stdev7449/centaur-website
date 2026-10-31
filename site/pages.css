@@ -68,6 +68,8 @@ th { color: var(--text); font-weight: 600; }
 .prov .k { font-family: "IBM Plex Mono", monospace; font-size: 11.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--violet-bright); }
 .prov b { display: block; color: #fff; font-size: 1.05rem; margin: 6px 0; }
 .prov p { margin: 0; font-size: 14px; color: var(--text-dim); }
+.prov p + p { margin-top: 10px; }
+.prov .prov-link { color: var(--violet-bright); text-decoration: underline; text-underline-offset: 2px; font-size: 13.5px; }
 .own-list { list-style: none; padding: 24px; margin: 0; border-radius: var(--r-l); border: 1px solid var(--line); background: var(--surface); display: grid; gap: 12px; }
 .own-list li { position: relative; padding-left: 26px; font-size: 14.5px; color: var(--text-dim); }
 .own-list li::before { content: ""; position: absolute; left: 4px; top: 8px; width: 9px; height: 9px; border-radius: 50%; background: var(--violet); }
@@ -92,6 +94,18 @@ table.cmp { min-width: 760px; font-size: 14px; }
 table.cmp thead th { color: #fff; }
 table.cmp thead th:nth-child(2), table.cmp td:nth-child(2) { color: var(--text); background: rgba(139,124,246,0.08); }
 table.cmp tbody th { white-space: nowrap; color: var(--violet-bright); font-weight: 600; }
+/* on phones each row becomes a card, so nothing scrolls sideways */
+@media (max-width: 640px) {
+  table.cmp { min-width: 0; }
+  table.cmp thead { display: none; }
+  table.cmp, table.cmp tbody, table.cmp tr, table.cmp th, table.cmp td { display: block; width: 100%; }
+  table.cmp tr { border: 1px solid var(--line); border-radius: 16px; padding: 14px 16px 6px; margin-bottom: 12px; background: var(--surface); }
+  table.cmp tbody th { white-space: normal; padding: 0 0 8px; border: 0; font-size: 15px; }
+  table.cmp td { padding: 10px 0; border: 0; border-top: 1px solid var(--line); }
+  table.cmp td:nth-child(2) { background: none; }
+  table.cmp td::before { content: attr(data-label); display: block; margin-bottom: 3px; font-family: "IBM Plex Mono", monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-mute); }
+  table.cmp td:nth-child(2)::before { color: var(--violet-bright); }
+}
 details.faq { border-bottom: 1px solid var(--line); padding: 14px 0; }
 details.faq summary { cursor: pointer; font-weight: 600; color: var(--text); list-style: none; display: flex; justify-content: space-between; gap: 16px; }
 details.faq summary::-webkit-details-marker { display: none; }
