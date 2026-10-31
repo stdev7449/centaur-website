@@ -35,6 +35,7 @@ Same-day setup with no implementation fee and no consultants: a guided setup dra
 - [Meet the agents (PDF)](https://www.centaurcrm.com/downloads/centaur-crm-meet-the-agents.pdf)
 - [How Centaur compares with Salesforce, HubSpot, monday CRM, Dynamics 365 and Pipedrive (PDF)](https://www.centaurcrm.com/downloads/centaur-crm-how-centaur-compares.pdf)
 - [Compare: Centaur vs Salesforce, HubSpot, monday CRM, Dynamics 365 and Pipedrive](https://www.centaurcrm.com/compare.html)
+- [AI sales agents](https://www.centaurcrm.com/ai-sales-agents.html): what each of the six agents does and how you stay in control
 - [Our story](https://www.centaurcrm.com/our-story.html): why a 30-year sales veteran built Centaur
 - [Switching to Centaur](https://www.centaurcrm.com/switching.html): during the beta we move your CRM data for you, at no cost
 - [FAQ](https://www.centaurcrm.com/faq.html)
