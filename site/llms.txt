@@ -38,7 +38,7 @@ Same-day setup with no implementation fee and no consultants: a guided setup dra
 - [Centaur vs Dynamics 365 Sales](https://www.centaurcrm.com/centaur-vs-dynamics-365.html): for teams on Microsoft 365 choosing between the two
 - [AI sales agents](https://www.centaurcrm.com/ai-sales-agents.html): what each of the six agents does and how you stay in control
 - [Our story](https://www.centaurcrm.com/our-story.html): why a 30-year sales veteran built Centaur
-- [Switching to Centaur](https://www.centaurcrm.com/switching.html): during the beta we move your CRM data for you, at no cost
+- [Switching to Centaur](https://www.centaurcrm.com/switching.html): during the beta we guide your import on a Microsoft Teams call, at no cost; your data never leaves your hands
 - [Automated CRM data entry](https://www.centaurcrm.com/automated-crm-data-entry.html): how deals stay up to date from email and Teams calls, and the rules the agents follow
 - [FAQ](https://www.centaurcrm.com/faq.html)
 - [Security](https://www.centaurcrm.com/security.html)
