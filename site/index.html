@@ -219,6 +219,26 @@
 
   /* ---- sections ---- */
   section { padding: 66px 0; }
+
+  /* Time-saved calculator */
+  .calc { display: grid; grid-template-columns: 1.15fr 1fr; gap: 28px; align-items: start; }
+  .calc-in, .calc-out { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-l); padding: 26px; box-shadow: var(--shadow-card); }
+  .calc h3 { margin: 0 0 4px; font-family: "Archivo", sans-serif; font-size: 1.05rem; color: #fff; }
+  .calc .calc-sub { margin: 0 0 18px; color: var(--text-mute); font-size: .92rem; }
+  .calc-row { display: grid; grid-template-columns: 1fr 110px; gap: 12px; align-items: center; padding: 10px 0; border-top: 1px solid var(--line-soft); }
+  .calc-row:first-of-type { border-top: 0; }
+  .calc-row label { color: var(--text-dim); font-size: .98rem; }
+  .calc-row label small { display: block; color: var(--text-mute); font-size: .8rem; margin-top: 2px; }
+  .calc-row input { width: 100%; background: var(--ground-2); border: 1px solid var(--line); border-radius: var(--r-s); padding: 9px 10px; color: var(--text); font-family: inherit; font-size: 15px; text-align: right; }
+  .calc-row input:focus { outline: 2px solid var(--violet-bright); outline-offset: 1px; border-color: var(--violet); }
+  .calc-group { margin-top: 22px; }
+  .calc-out { position: sticky; top: 96px; }
+  .calc-big { font-family: "Archivo", sans-serif; font-weight: 800; font-size: clamp(2.4rem, 5vw, 3.4rem); line-height: 1; color: #fff; letter-spacing: -0.02em; margin: 8px 0 4px; }
+  .calc-big.won { color: var(--won); }
+  .calc-lbl { color: var(--text-mute); font-size: .92rem; margin: 0 0 20px; }
+  .calc-tag { display: inline-block; font-family: "IBM Plex Mono", monospace; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--risk); background: var(--risk-wash); border: 1px solid rgba(245,165,36,.3); border-radius: 999px; padding: 4px 10px; margin-bottom: 14px; }
+  .calc-note { color: var(--text-mute); font-size: .82rem; line-height: 1.5; margin: 18px 0 0; padding-top: 16px; border-top: 1px solid var(--line-soft); }
+  @media (max-width: 860px) { .calc { grid-template-columns: 1fr; } .calc-out { position: static; } }
   .alt { background: var(--ground-2); border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft); }
   .glow-sec { position: relative; overflow: hidden; }
   .glow-sec::before {
@@ -876,6 +896,47 @@
     </div>
   </section>
 
+  <!-- TIME-SAVED CALCULATOR -->
+  <section id="savings" class="alt glow-sec">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Time saved</span>
+        <h2>What's the admin <span class="hl">costing your team?</span></h2>
+        <p class="lead">Put in your own numbers to see roughly how much time the agents could give back.
+          It's an illustration based on the assumptions shown, not a promise or a customer result.</p>
+      </div>
+      <div class="calc" id="calc">
+        <form class="calc-in" onsubmit="return false" aria-label="Time-saved calculator inputs">
+          <h3>Your team</h3>
+          <p class="calc-sub">Change any number. The results update as you type.</p>
+          <div class="calc-row"><label for="cReps">Sales reps</label><input id="cReps" type="number" inputmode="numeric" min="1" max="10000" value="15" /></div>
+          <div class="calc-row"><label for="cRate">Cost of a rep's hour ($)<small>Salary, commission and overheads</small></label><input id="cRate" type="number" inputmode="decimal" min="0" max="10000" value="50" /></div>
+          <div class="calc-row"><label for="cWeeks">Working weeks a year</label><input id="cWeeks" type="number" inputmode="numeric" min="1" max="52" value="46" /></div>
+          <div class="calc-group">
+            <h3>Each rep's week</h3>
+            <p class="calc-sub">How often each of these happens, and the minutes we assume it takes by hand.</p>
+            <div class="calc-row"><label for="cEmails">Email replies written<small>4 minutes each</small></label><input id="cEmails" data-min="4" type="number" inputmode="numeric" min="0" max="1000" value="25" /></div>
+            <div class="calc-row"><label for="cMeet">Meetings booked<small>10 minutes each</small></label><input id="cMeet" data-min="10" type="number" inputmode="numeric" min="0" max="1000" value="3" /></div>
+            <div class="calc-row"><label for="cUpd">Deal updates from email and calls<small>2 minutes each</small></label><input id="cUpd" data-min="2" type="number" inputmode="numeric" min="0" max="1000" value="20" /></div>
+            <div class="calc-row"><label for="cNotes">Call notes written up<small>5 minutes each</small></label><input id="cNotes" data-min="5" type="number" inputmode="numeric" min="0" max="1000" value="5" /></div>
+            <div class="calc-row"><label for="cBriefs">Meeting briefs prepared<small>10 minutes each</small></label><input id="cBriefs" data-min="10" type="number" inputmode="numeric" min="0" max="1000" value="5" /></div>
+          </div>
+        </form>
+        <div class="calc-out" aria-live="polite">
+          <span class="calc-tag">Illustration</span>
+          <div class="calc-big" id="cPerRep">4.1 hours</div>
+          <p class="calc-lbl">saved per rep, per week</p>
+          <div class="calc-big" id="cTeamHours">2,817 hours</div>
+          <p class="calc-lbl">saved across the team in a year</p>
+          <div class="calc-big won" id="cValue">$140,875</div>
+          <p class="calc-lbl">worth of selling time a year</p>
+          <a class="btn btn-primary" href="#enquire" data-reason="demo">Book a demo</a>
+          <p class="calc-note">An estimate, not a guarantee. The minutes per task are the same ones Centaur uses in its weekly summary email. Your results depend on your team, your sales process and how much you let the agents do.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- PLATFORM -->
   <section id="platform">
     <div class="wrap">
@@ -1178,6 +1239,26 @@
   </div>
 </footer>
 
+<script>
+// Time-saved calculator: reps × minutes saved a week × working weeks × hourly cost. An illustration.
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  if (!$('calc')) return;
+  var tasks = ['cEmails', 'cMeet', 'cUpd', 'cNotes', 'cBriefs'];
+  var num = function (id) { var v = parseFloat($(id).value); return isFinite(v) && v > 0 ? v : 0; };
+  var fmt = function (n) { return Math.round(n).toLocaleString('en-US'); };
+  function update() {
+    var mins = tasks.reduce(function (s, id) { return s + num(id) * Number($(id).dataset.min); }, 0);
+    var perRep = mins / 60;
+    var teamHours = perRep * num('cReps') * num('cWeeks');
+    $('cPerRep').textContent = (Math.round(perRep * 10) / 10).toLocaleString('en-US') + (perRep === 1 ? ' hour' : ' hours');
+    $('cTeamHours').textContent = fmt(teamHours) + ' hours';
+    $('cValue').textContent = '$' + fmt(teamHours * num('cRate'));
+  }
+  $('calc').addEventListener('input', update);
+  update();
+})();
+</script>
 <script>
 // Demo video: the big play button starts it; it hides once the video is playing.
 (function () {
