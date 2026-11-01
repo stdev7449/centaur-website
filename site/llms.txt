@@ -24,6 +24,10 @@ Centaur was founded and built by a sales professional with 30 years of selling e
 
 - Teams on Google Workspace email: only Microsoft 365 is supported for now.
 
+## Pricing
+
+Per user per month: Starter $35 (£25), Pro $100 (£75), Enterprise $200 (£150), which includes the AI agents. AI usage is billed by the customer's own AI provider at cost, with no markup. Beta customers who buy after release get 25% off the list price for life.
+
 ## Getting started
 
 Same-day setup with no implementation fee and no consultants: a guided setup drafts a brief about the business from its website, imports existing spreadsheets, and sends the IT admin the Microsoft 365 steps. Beta customers keep a lifetime discount. Contact: info@centaurcrm.com.
