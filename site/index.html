@@ -960,7 +960,7 @@
           <p class="calc-lbl">worth of selling time a year</p>
           <div class="calc-roi">
             <div class="calc-roi-row"><span>Centaur Enterprise for your team</span><b id="cCost">$3,000 a month</b></div>
-            <div class="calc-roi-row"><span>Pays for itself in</span><b id="cPayback">0.3 months</b></div>
+            <div class="calc-roi-row"><span>Pays for itself in</span><b id="cPayback">8 days</b></div>
             <div class="calc-roi-row"><span>Return on what you pay</span><b id="cMultiple">3.9×</b></div>
             <p class="calc-roi-note">Based on efficiency savings alone. It doesn't take into account any increase in revenue through a more efficient team and sales process.</p>
           </div>
@@ -1351,7 +1351,11 @@
     $('cCost').textContent = cur.sym + fmt(monthCost) + ' a month';
     if (monthValue > 0 && monthCost > 0) {
       var months = monthCost / monthValue;
-      $('cPayback').textContent = (months < 0.1 ? 'under 0.1' : (Math.round(months * 10) / 10).toLocaleString('en-US')) + (months > 1.05 ? ' months' : ' month' + (months < 0.95 ? 's' : ''));
+      // Under a month: in days (or weeks); otherwise in months.
+      var days = Math.max(1, Math.round(months * 30.4));
+      $('cPayback').textContent = months < 1
+        ? (days < 14 ? days + (days === 1 ? ' day' : ' days') : Math.round(days / 7) + ' weeks')
+        : (Math.round(months * 10) / 10).toLocaleString('en-US') + (Math.round(months * 10) === 10 ? ' month' : ' months');
       $('cMultiple').textContent = (Math.round((monthValue / monthCost) * 10) / 10).toLocaleString('en-US') + '×';
     } else { $('cPayback').textContent = '—'; $('cMultiple').textContent = '—'; }
   }
