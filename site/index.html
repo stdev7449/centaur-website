@@ -144,10 +144,12 @@
   .brand .c-mark { width: 25px; height: 25px; flex: none; filter: drop-shadow(0 0 10px rgba(139,124,246,0.5)); }
   .brand .nm-1 { color: var(--text); }
   .brand .nm-2 { color: var(--violet); }
-  .nav-links { display: flex; gap: 28px; font-size: 15px; font-weight: 500; color: var(--text-dim); }
+  .nav-links { display: flex; gap: 22px; font-size: 15px; font-weight: 500; color: var(--text-dim); white-space: nowrap; }
+  .brand { white-space: nowrap; }
+  @media (max-width: 1240px) { .nav-links { gap: 16px; font-size: 14px; } }
   .nav-links a:hover { color: var(--violet-bright); }
   .nav-cta { display: flex; align-items: center; gap: 14px; }
-  @media (max-width: 920px) { .nav-links { display: none; } }
+  @media (max-width: 1080px) { .nav-links { display: none; } }
 
   /* ---- hero ---- */
   .hero { position: relative; overflow: hidden; background: var(--ground); padding: 0; }
@@ -263,6 +265,7 @@
   .beta-offer b { color: #fff; }
   .beta-offer a { color: var(--violet-bright); text-decoration: underline; text-underline-offset: 2px; margin-left: 4px; font-weight: 600; }
   @media (max-width: 900px) { .plans { grid-template-columns: 1fr; } }
+  .int-chips { display: flex; flex-wrap: wrap; gap: 10px; }
   .alt { background: var(--ground-2); border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft); }
   .glow-sec { position: relative; overflow: hidden; }
   .glow-sec::before {
@@ -578,7 +581,6 @@
       <a href="#agents">The agents</a>
       <a href="#real">See it live</a>
       <a href="#platform">Platform</a>
-      <a href="#downloads">Downloads</a>
       <a href="#pricing">Pricing</a>
       <a href="integrations.html">Integrations</a>
       <a href="resources.html">Resources</a>
@@ -938,7 +940,7 @@
           <p class="calc-sub">Change any number. The results update as you type.</p>
           <div class="calc-row"><label for="cCur">Currency</label><select id="cCur" class="calc-cur"><option value="USD">US$</option><option value="GBP">£ GBP</option></select></div>
           <div class="calc-row"><label for="cReps">Sales reps</label><input id="cReps" type="number" inputmode="numeric" min="1" max="10000" value="15" /></div>
-          <div class="calc-row"><label for="cRate">Cost of a rep's hour (<span class="cSym">$</span>)<small>Salary, commission and overheads</small></label><input id="cRate" type="number" inputmode="decimal" min="0" max="10000" value="50" /></div>
+          <div class="calc-row"><label for="cRate">Cost of a rep's hour (<span class="cSym">$</span>)<small>Salary, commission and overheads</small></label><input id="cRate" type="number" inputmode="decimal" min="0" max="10000" step="0.5" value="50" /></div>
           <div class="calc-row"><label for="cWeeks">Working weeks a year</label><input id="cWeeks" type="number" inputmode="numeric" min="1" max="52" value="46" /></div>
           <div class="calc-group">
             <h3>Each rep's week</h3>
@@ -1098,6 +1100,21 @@
         </div>
 
       </div>
+    </div>
+  </section>
+
+  <!-- INTEGRATIONS -->
+  <section id="integrations">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Integrations</span>
+        <h2>Works with the tools <span class="hl">your team already uses.</span></h2>
+        <p class="lead">Centaur is built around Microsoft 365: the agents work in your reps' Outlook mailboxes and calendars, and turn recorded Teams calls into notes. The AI runs on your own Anthropic account. Alerts and approvals go to Slack or Teams, prospects come from the data provider you already use, and your website forms and landing pages feed straight in. A public API, Zapier, single sign-on with Entra ID or Okta, Google Workspace and Zoom are on the roadmap.</p>
+      </div>
+      <div class="int-chips">
+        <span class="trust-chip">Outlook email</span><span class="trust-chip">Outlook calendar</span><span class="trust-chip">Teams transcripts</span><span class="trust-chip">Anthropic</span><span class="trust-chip">Slack</span><span class="trust-chip">Apollo</span><span class="trust-chip">ZoomInfo</span><span class="trust-chip">Lusha</span><span class="trust-chip">People Data Labs</span><span class="trust-chip">Excel and CSV</span>
+      </div>
+      <a class="btn btn-ghost" href="integrations.html" style="margin-top:22px;">See all integrations and the roadmap</a>
     </div>
   </section>
 
@@ -1349,7 +1366,16 @@
       $('cMultiple').textContent = (Math.round((monthValue / monthCost) * 10) / 10).toLocaleString('en-US') + '×';
     } else { $('cPayback').textContent = '—'; $('cMultiple').textContent = '—'; }
   }
-  $('cCur').addEventListener('change', update);
+  // Default hourly cost per currency, at the same rate as the prices ($200 = £150):
+  // $50 = £37.50. Switching currency swaps the default only if it hasn't been changed.
+  var RATE_DEFAULT = { USD: 50, GBP: 37.5 };
+  var lastCur = $('cCur').value;
+  $('cCur').addEventListener('change', function () {
+    var cur = $('cCur').value;
+    if (parseFloat($('cRate').value) === RATE_DEFAULT[lastCur]) $('cRate').value = RATE_DEFAULT[cur];
+    lastCur = cur;
+    update();
+  });
   $('calc').addEventListener('input', update);
   update();
 })();
