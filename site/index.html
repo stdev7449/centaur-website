@@ -246,9 +246,6 @@
   .calc-note { color: var(--text-mute); font-size: .82rem; line-height: 1.5; margin: 18px 0 0; padding-top: 16px; border-top: 1px solid var(--line-soft); }
   @media (max-width: 860px) { .calc { grid-template-columns: 1fr; } .calc-out { position: static; } }
   /* Pricing */
-  .price-cur { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: 3px; margin-bottom: 22px; }
-  .price-cur button { border: 0; background: transparent; color: var(--text-dim); font: inherit; font-size: 14px; font-weight: 600; padding: 7px 16px; border-radius: 999px; cursor: pointer; }
-  .price-cur button.on { background: var(--violet); color: #0B0A12; }
   .plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
   .plan { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-l); padding: 26px 24px; box-shadow: var(--shadow-card); }
   .plan-hi { border-color: var(--violet); background: linear-gradient(180deg, rgba(139,124,246,.12), transparent 55%), var(--surface); }
@@ -257,6 +254,7 @@
   .plan-price { margin: 10px 0 6px; display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
   .plan-price .pr { font-family: "Archivo", sans-serif; font-weight: 800; font-size: 2.6rem; color: #fff; letter-spacing: -0.02em; }
   .plan-price .per { color: var(--text-mute); font-size: .92rem; }
+  .plan-uk { margin: 0 0 12px; font-size: .82rem; color: var(--text-mute); }
   .plan-sum { color: var(--text); font-weight: 600; margin: 0 0 12px; }
   .plan ul { margin: 0; padding-left: 18px; color: var(--text-dim); font-size: .95rem; }
   .plan li + li { margin-top: 6px; }
@@ -979,28 +977,28 @@
         <h2>Simple pricing. <span class="hl">No AI markup.</span></h2>
         <p class="lead">Pay per user, per month. Your AI usage is billed by your own AI provider, at their rate, so we never add a margin to it. No setup fee and no consultants.</p>
       </div>
-      <div class="price-cur" role="group" aria-label="Currency">
-        <button type="button" class="on" data-cur="usd">US$</button><button type="button" data-cur="gbp">£ GBP</button>
-      </div>
       <div class="plans">
         <div class="plan">
           
           <h3>Starter</h3>
-          <div class="plan-price"><span class="pr" data-gbp="£25" data-usd="$35">$35</span><span class="per">per user / month</span></div>
+          <div class="plan-price"><span class="pr">$35</span><span class="per">per user / month</span></div>
+          <p class="plan-uk">UK pricing: £25 per user / month</p>
           <p class="plan-sum">The core CRM.</p>
           <ul><li>Accounts, contacts, leads and opportunities</li><li>Pipeline, activities and tasks</li><li>Dashboards and reports</li><li>Lead routing, roles and permissions</li><li>Import and export</li></ul>
         </div>
         <div class="plan">
           
           <h3>Pro</h3>
-          <div class="plan-price"><span class="pr" data-gbp="£75" data-usd="$100">$100</span><span class="per">per user / month</span></div>
+          <div class="plan-price"><span class="pr">$100</span><span class="per">per user / month</span></div>
+          <p class="plan-uk">UK pricing: £75 per user / month</p>
           <p class="plan-sum">Everything in Starter, plus email and marketing.</p>
           <ul><li>Outlook email and calendar integration</li><li>Email campaigns and landing pages</li><li>Marketing lists</li><li>Outreach sequences</li><li>Workflow automation</li></ul>
         </div>
         <div class="plan plan-hi">
           <span class="plan-badge">Includes the AI agents</span>
           <h3>Enterprise</h3>
-          <div class="plan-price"><span class="pr" data-gbp="£150" data-usd="$200">$200</span><span class="per">per user / month</span></div>
+          <div class="plan-price"><span class="pr">$200</span><span class="per">per user / month</span></div>
+          <p class="plan-uk">UK pricing: £150 per user / month</p>
           <p class="plan-sum">Everything in Pro, plus the AI agents.</p>
           <ul><li>AI agents: outreach, deal updates, meeting briefs and call notes</li><li>AI assistant, drafts and account briefs</li><li>Teams call transcripts</li><li>Signals and sourced competitor battle cards</li><li>AI Training and AI prospecting</li></ul>
         </div>
@@ -1315,18 +1313,6 @@
   </div>
 </footer>
 
-<script>
-// Pricing: show list prices in US$ or £.
-(function () {
-  var box = document.querySelector('.price-cur'); if (!box) return;
-  box.addEventListener('click', function (e) {
-    var b = e.target.closest('button'); if (!b) return;
-    var cur = b.getAttribute('data-cur');
-    box.querySelectorAll('button').forEach(function (x) { x.classList.toggle('on', x === b); });
-    document.querySelectorAll('.plan-price .pr').forEach(function (p) { p.textContent = p.getAttribute('data-' + cur); });
-  });
-})();
-</script>
 <script>
 // Time-saved calculator: reps × minutes saved a week × working weeks × hourly cost. An illustration.
 (function () {
