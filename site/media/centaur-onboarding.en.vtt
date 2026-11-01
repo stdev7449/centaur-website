@@ -25,113 +25,117 @@ First, add your company details: your name and when your financial year starts.
 Then invite your team. Each person gets an email to set their own password.
 
 7
-00:00:35.590 --> 00:00:41.610
-Next, connect Microsoft 365. This is the one step for your IT admin.
+00:00:35.530 --> 00:00:41.230
+Next, connect your Microsoft 365. This is the one step for your IT admin.
 
 8
-00:00:42.150 --> 00:00:46.750
+00:00:41.770 --> 00:00:46.370
 Enter their email address, and Centaur sends them step-by-step instructions.
 
 9
-00:00:47.450 --> 00:00:49.180
+00:00:47.070 --> 00:00:48.800
 It takes about twenty minutes.
 
 10
-00:00:49.470 --> 00:00:55.120
+00:00:49.090 --> 00:00:54.740
 Centaur also checks your email setup, so your messages land in the inbox, not in spam.
 
 11
-00:00:56.200 --> 00:01:03.620
+00:00:55.820 --> 00:01:03.240
 Then connect your own AI key from Anthropic. You pay Anthropic directly, at their rate, with no markup from us.
 
 12
-00:01:04.180 --> 00:01:11.320
+00:01:03.800 --> 00:01:10.940
 As soon as the key is saved, every AI agent switches on, in draft mode, so nothing is sent without your approval.
 
 13
-00:01:12.120 --> 00:01:14.520
+00:01:11.740 --> 00:01:14.140
 Now teach the AI about your business.
 
 14
-00:01:15.270 --> 00:01:21.310
+00:01:14.890 --> 00:01:20.930
 Enter your website, and Centaur reads it and drafts the answers it can find, with a link to each source.
 
 15
-00:01:22.390 --> 00:01:29.020
+00:01:22.010 --> 00:01:28.650
 Then work through eight short steps: your pitch, your customers, your competitors and the objections you hear.
 
 16
-00:01:29.950 --> 00:01:35.500
-Add your main competitors, and Centaur researches each one on the web for a sourced battle card.
+00:01:29.540 --> 00:01:33.950
+Add your main competitors, and Centaur researches each one on the web
 
 17
-00:01:36.150 --> 00:01:38.830
-You approve every card before the agents use it.
+00:01:34.080 --> 00:01:37.270
+and then generates a battle card to show your strengths against them.
 
 18
-00:01:39.320 --> 00:01:45.690
-Then add your products and check your pipeline stages, so deal values and forecasts are right from day one.
+00:01:37.810 --> 00:01:40.490
+You approve every card before the agents use it.
 
 19
-00:01:46.710 --> 00:01:52.820
-Set each rep's manager. If a rep's AI drafts wait too long, their manager is copied in.
+00:01:40.980 --> 00:01:47.350
+Then add your products and check your pipeline stages, so deal values and forecasts are right from day one.
 
 20
-00:01:53.850 --> 00:01:57.180
-Next, bring in your accounts, contacts and leads.
+00:01:48.370 --> 00:01:54.480
+Set each rep's manager. If a rep's AI drafts wait too long, their manager is copied in.
 
 21
-00:01:57.560 --> 00:02:01.730
-Download the Excel template, or use the spreadsheets you already have.
+00:01:55.510 --> 00:01:58.840
+Next, bring in your accounts, contacts and leads.
 
 22
-00:02:02.310 --> 00:02:09.970
-Centaur matches your columns, checks every row before anything is saved, and creates custom fields for anything that doesn't fit.
+00:01:59.220 --> 00:02:03.390
+Download the Excel template, or use the spreadsheets you already have.
 
 23
-00:02:10.820 --> 00:02:13.310
-During the beta, we'll help you on a Teams call.
+00:02:03.970 --> 00:02:11.630
+Centaur matches your columns, checks every row before anything is saved, and creates custom fields for anything that doesn't fit.
 
 24
-00:02:14.460 --> 00:02:21.620
-Finally, review your AI agent settings: the agent's name and sign-off, its guardrails and follow-ups.
+00:02:12.480 --> 00:02:14.970
+During the beta, we'll help you on a Teams call.
 
 25
-00:02:22.520 --> 00:02:27.550
-The agents start in draft mode, and you decide when, and whether, they send on their own.
+00:02:16.120 --> 00:02:23.280
+Finally, review your AI agent settings: the agent's name and sign-off, its guardrails and follow-ups.
 
 26
-00:02:28.240 --> 00:02:31.420
-You can also connect Slack, for alerts and approvals.
+00:02:24.180 --> 00:02:29.210
+The agents start in draft mode, and you decide when, and whether, they send on their own.
 
 27
-00:02:32.220 --> 00:02:34.810
-Then each rep does three quick steps of their own.
+00:02:29.900 --> 00:02:33.070
+You can also connect Slack, for alerts and approvals.
 
 28
-00:02:35.600 --> 00:02:41.120
-Connect your mailbox and calendar, so the AI sends from your own account and books meetings for you.
+00:02:33.880 --> 00:02:36.480
+Then each rep does three quick steps of their own.
 
 29
-00:02:41.740 --> 00:02:47.360
-Set your time zone, working hours and tone, so it offers the right times and sounds like you.
+00:02:37.260 --> 00:02:42.780
+Connect your mailbox and calendar, so the AI sends from your own account and books meetings for you.
 
 30
-00:02:47.940 --> 00:02:50.800
-And choose how you'd like to be told when a draft needs you.
+00:02:43.400 --> 00:02:49.020
+Set your time zone, working hours and tone, so it offers the right times and sounds like you.
 
 31
-00:02:51.440 --> 00:02:59.620
-And that's it. Once every step is ticked, the checklist steps aside, and your day starts here, with your agents already at work.
+00:02:49.600 --> 00:02:52.460
+And choose how you'd like to be told when a draft needs you.
 
 32
-00:03:00.760 --> 00:03:02.150
-Centaur CRM.
+00:02:53.100 --> 00:03:01.280
+And that's it. Once every step is ticked, the checklist steps aside, and your day starts here, with your agents already at work.
 
 33
-00:03:02.590 --> 00:03:05.500
-Set up in a day, selling more from day one.
+00:03:02.420 --> 00:03:03.810
+Centaur CRM.
 
 34
-00:03:06.090 --> 00:03:10.010
+00:03:04.260 --> 00:03:07.160
+Set up in a day, selling more from day one.
+
+35
+00:03:07.750 --> 00:03:11.670
 Book a demonstration today, at centaurcrm.com.
