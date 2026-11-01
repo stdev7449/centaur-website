@@ -241,6 +241,7 @@
   .calc-roi-row { display: flex; justify-content: space-between; gap: 12px; padding: 5px 0; color: var(--text-dim); font-size: .95rem; }
   .calc-roi-row b { color: #fff; font-family: "Archivo", sans-serif; white-space: nowrap; }
   .calc-row select.calc-cur { width: 100%; background: var(--ground-2); border: 1px solid var(--line); border-radius: var(--r-s); padding: 9px 10px; color: var(--text); font-family: inherit; font-size: 15px; }
+  .calc-roi-sub { color: var(--text-mute); font-size: .82rem; }
   .calc-roi-note { margin: 8px 0 0; font-size: .8rem; color: var(--text-mute); line-height: 1.45; }
   .calc-note a { color: var(--violet-bright); text-decoration: underline; text-underline-offset: 2px; }
   .calc-note { color: var(--text-mute); font-size: .82rem; line-height: 1.5; margin: 18px 0 0; padding-top: 16px; border-top: 1px solid var(--line-soft); }
@@ -957,8 +958,8 @@
           <div class="calc-big won" id="cValue">$140,875</div>
           <p class="calc-lbl">worth of selling time a year</p>
           <div class="calc-roi">
-            <div class="calc-roi-row"><span>Centaur Enterprise for your team</span><b id="cCost">$3,000 a month</b></div>
-            <div class="calc-roi-row"><span>Pays for itself in</span><b id="cPayback">8 days</b></div>
+            <div class="calc-roi-row"><span>Centaur Enterprise for your team <small id="cCostMonth" class="calc-roi-sub">($3,000 a month)</small></span><b id="cCost">$36,000 a year</b></div>
+            <div class="calc-roi-row"><span>A year of Centaur pays for itself in</span><b id="cPayback">3.1 months</b></div>
             <div class="calc-roi-row"><span>Return on what you pay</span><b id="cMultiple">3.9×</b></div>
             <p class="calc-roi-note">Based on efficiency savings alone. It doesn't take into account any increase in revenue through a more efficient team and sales process.</p>
           </div>
@@ -1334,10 +1335,11 @@
     // What Centaur Enterprise costs this team, and how fast the time saved covers it.
     var monthCost = cur.price * num('cReps');
     var monthValue = yearValue / 12;
-    $('cCost').textContent = cur.sym + fmt(monthCost) + ' a month';
+    $('cCost').textContent = cur.sym + fmt(monthCost * 12) + ' a year';
+    $('cCostMonth').textContent = '(' + cur.sym + fmt(monthCost) + ' a month)';
     if (monthValue > 0 && monthCost > 0) {
-      var months = monthCost / monthValue;
-      // Under a month: in days (or weeks); otherwise in months.
+      // Payback: how many months of time saved cover a full year of Centaur.
+      var months = (monthCost * 12) / monthValue;
       var days = Math.max(1, Math.round(months * 30.4));
       $('cPayback').textContent = months < 1
         ? (days < 14 ? days + (days === 1 ? ' day' : ' days') : Math.round(days / 7) + ' weeks')
