@@ -258,6 +258,8 @@
   .plan-price .pr { font-family: "Archivo", sans-serif; font-weight: 800; font-size: 2.6rem; color: #fff; letter-spacing: -0.02em; }
   .plan-price .per { color: var(--text-mute); font-size: .92rem; }
   .plan-uk { margin: 0 0 12px; font-size: .82rem; color: var(--text-mute); }
+  .plan-min { margin: -6px 0 12px; font-size: .85rem; font-weight: 600; color: var(--violet-bright); }
+  .plan-terms { margin: 16px 0 0; color: var(--text-mute); font-size: .92rem; }
   .plan-sum { color: var(--text); font-weight: 600; margin: 0 0 12px; }
   .plan ul { margin: 0; padding-left: 18px; color: var(--text-dim); font-size: .95rem; }
   .plan li + li { margin-top: 6px; }
@@ -967,7 +969,7 @@
             <p class="calc-roi-note">Based on efficiency savings alone. It doesn't take into account any increase in revenue through a more efficient team and sales process.</p>
           </div>
           <a class="btn btn-primary" href="#enquire" data-reason="demo">Book a demo</a>
-          <p class="calc-note">An estimate, not a guarantee. The savings and return are based on efficiencies alone, the hours of admin the agents take on, and don't take into account any increase in revenue through a more efficient team and sales process. The minutes per task are the same ones Centaur uses in its weekly summary email. The cost is the Enterprise plan's list price (<a href="#pricing">$200 / £150 per user a month</a>), before any beta discount, and doesn't include your own AI usage. Your results depend on your team, your sales process and how much you let the agents do.</p>
+          <p class="calc-note">An estimate, not a guarantee. The savings and return are based on efficiencies alone, the hours of admin the agents take on, and don't take into account any increase in revenue through a more efficient team and sales process. The minutes per task are the same ones Centaur uses in its weekly summary email. The cost is the Enterprise plan's list price (<a href="#pricing">$200 / £150 per user a month</a>, billed annually, minimum 10 users), before any beta discount, and doesn't include your own AI usage. Your results depend on your team, your sales process and how much you let the agents do.</p>
         </div>
       </div>
     </div>
@@ -979,7 +981,7 @@
       <div class="sec-head">
         <span class="eyebrow">Pricing</span>
         <h2>Simple pricing. <span class="hl">No AI markup.</span></h2>
-        <p class="lead">Pay per user, per month. Your AI usage is billed by your own AI provider, at their rate, so we never add a margin to it. No setup fee and no consultants.</p>
+        <p class="lead">Priced per user, per month, billed annually. Your AI usage is billed by your own AI provider, at their rate, so we never add a margin to it. No setup fee and no consultants.</p>
       </div>
       <div class="plans">
         <div class="plan">
@@ -987,6 +989,7 @@
           <h3>Starter</h3>
           <div class="plan-price"><span class="pr">$35</span><span class="per">per user / month</span></div>
           <p class="plan-uk">UK pricing: £25 per user / month</p>
+          <p class="plan-min">Minimum 2 users</p>
           <p class="plan-sum">The core CRM.</p>
           <ul><li>Accounts, contacts, leads and opportunities</li><li>Pipeline, activities and tasks</li><li>Dashboards and reports</li><li>Lead routing, roles and permissions</li><li>Import and export</li></ul>
         </div>
@@ -995,6 +998,7 @@
           <h3>Pro</h3>
           <div class="plan-price"><span class="pr">$100</span><span class="per">per user / month</span></div>
           <p class="plan-uk">UK pricing: £75 per user / month</p>
+          <p class="plan-min">Minimum 5 users</p>
           <p class="plan-sum">Everything in Starter, plus email and marketing.</p>
           <ul><li>Outlook email and calendar integration</li><li>Email campaigns and landing pages</li><li>Marketing lists</li><li>Outreach sequences</li><li>Workflow automation</li></ul>
         </div>
@@ -1003,10 +1007,12 @@
           <h3>Enterprise</h3>
           <div class="plan-price"><span class="pr">$200</span><span class="per">per user / month</span></div>
           <p class="plan-uk">UK pricing: £150 per user / month</p>
+          <p class="plan-min">Minimum 10 users</p>
           <p class="plan-sum">Everything in Pro, plus the AI agents.</p>
           <ul><li>AI agents: outreach, deal updates, meeting briefs and call notes</li><li>AI assistant, drafts and account briefs</li><li>Teams call transcripts</li><li>Signals and sourced competitor battle cards</li><li>AI Training and AI prospecting</li></ul>
         </div>
       </div>
+      <p class="plan-terms">Prices are shown per user, per month, and billed annually in advance.</p>
       <div class="beta-offer">
         <b>Beta customers: 25% off, for life.</b> If you join the beta and choose to buy Centaur once the product is released, you'll get 25% off the list price of your subscription for as long as you're with us.
         <a href="#beta">Join the beta</a>
@@ -1352,10 +1358,11 @@
     var yearValue = teamHours * num('cRate');
     $('cValue').textContent = cur.sym + fmt(yearValue);
     // What Centaur Enterprise costs this team, and how fast the time saved covers it.
-    var monthCost = cur.price * num('cReps');
+    var users = Math.max(10, num('cReps'));   // Enterprise: minimum 10 users
+    var monthCost = cur.price * users;
     var monthValue = yearValue / 12;
     $('cCost').textContent = cur.sym + fmt(monthCost * 12) + ' a year';
-    $('cCostMonth').textContent = '(' + cur.sym + fmt(monthCost) + ' a month)';
+    $('cCostMonth').textContent = '(' + cur.sym + fmt(monthCost) + ' a month' + (num('cReps') < 10 ? ', minimum 10 users' : '') + ')';
     if (monthValue > 0 && monthCost > 0) {
       // Payback: how many months of time saved cover a full year of Centaur.
       var months = (monthCost * 12) / monthValue;
