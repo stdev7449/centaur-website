@@ -17,6 +17,7 @@
 <meta property="og:image" content="https://www.centaurcrm.com/og-image.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="canonical" href="https://www.centaurcrm.com/switching.html" />
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoObject","name":"Centaur CRM setup guide: get Centaur ready, step by step","description":"A walkthrough of every Centaur CRM setup step: company and team, Microsoft 365, your AI key, AI Training, competitors and products, data import, agent settings and each rep's own steps. Real app screens with fictional demo data.","thumbnailUrl":"https://www.centaurcrm.com/media/centaur-onboarding-poster.jpg","contentUrl":"https://www.centaurcrm.com/media/centaur-onboarding.mp4","uploadDate":"2026-11-01","duration":"PT3M11S","publisher":{"@type":"Organization","name":"Centaur CRM","url":"https://www.centaurcrm.com/"}}</script>
 </head>
 <body>
 <header>
@@ -50,6 +51,18 @@
     </div>
   </section>
   <div class="wrap"><div class="doc">
+    <h2>Watch the setup guide</h2>
+    <p>New to Centaur? This 3-minute video walks through every setup step, from inviting your team to importing your data.</p>
+    <div class="vid" style="margin-top:16px;">
+      <div class="vid-head"><span class="t">Get Centaur ready, step by step</span><span class="m">3:11 · real app · demo workspace</span></div>
+      <div class="vid-box">
+        <video id="setupVideo" controls playsinline preload="none" width="1600" height="900" poster="media/centaur-onboarding-poster.jpg" aria-label="Centaur CRM setup guide: the Get Centaur ready checklist, step by step">
+          <source src="media/centaur-onboarding.mp4" type="video/mp4" />
+          <track kind="captions" src="media/centaur-onboarding.en.vtt" srclang="en" label="English" />
+        </video>
+        <button class="vid-play" id="setupPlay" type="button" aria-label="Play the setup guide"><svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg></button>
+      </div>
+    </div>
     <h2>How it works</h2>
     <ol class="steps">
       <li><strong>We book a Teams call.</strong> At a time that suits you, with whoever looks after your CRM data today.</li>
@@ -114,5 +127,14 @@
     </div>
   </div>
 </footer>
+<script>
+(function () {
+  var v = document.getElementById('setupVideo'), b = document.getElementById('setupPlay');
+  if (!v || !b) return;
+  b.addEventListener('click', function () { v.play(); });
+  v.addEventListener('play', function () { b.hidden = true; });
+  v.addEventListener('ended', function () { b.hidden = false; });
+})();
+</script>
 </body>
 </html>
