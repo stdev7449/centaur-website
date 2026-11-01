@@ -171,3 +171,11 @@ details.faq p { margin-top: 10px; }
 .sec-more h2 { font-size: 1.25rem; margin: 0 0 12px; }
 @media (max-width: 860px) { .sec-more { grid-template-columns: 1fr; gap: 18px; } }
 .sec-more + .sec-note { margin-top: 28px; }
+
+/* Integrations */
+.int-grid { margin-top: 14px; }
+.int b { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.int-beta { font-family: "IBM Plex Mono", monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: #F5A524; border: 1px solid rgba(245,165,36,.4); background: rgba(245,165,36,.12); border-radius: 999px; padding: 2px 8px; font-weight: 500; }
+.int .int-setup { margin-top: 10px; font-size: 13px; color: var(--text-mute); }
+.int .int-setup span { color: var(--text-dim); font-weight: 600; }
+.int-road { background: transparent; border-style: dashed; }
