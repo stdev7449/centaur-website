@@ -139,3 +139,29 @@ details.faq p { margin-top: 10px; }
 .vid-play:hover, .vid-play:focus-visible { background: rgb(139,124,246); }
 .vid-play[hidden] { display: none; }
 @media (max-width: 600px) { .vid-play { width: 64px; height: 64px; } .vid-head .m { display: none; } }
+
+/* Resources: white papers */
+.wp-list { display: flex; flex-direction: column; gap: 22px; padding-bottom: 80px; }
+.wp { display: grid; grid-template-columns: 220px 1fr; gap: 28px; align-items: start; padding: 24px; border: 1px solid var(--line); border-radius: var(--r-l); background: var(--surface); scroll-margin-top: 90px; }
+.wp-cover { display: block; width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--line); }
+.wp-n { font-family: "IBM Plex Mono", monospace; font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--violet-bright); }
+.wp h2 { font-size: clamp(1.4rem, 3vw, 1.8rem); margin: 8px 0 6px; }
+.wp .wp-sub { color: var(--text); font-weight: 600; margin: 0 0 12px; }
+.wp p { color: var(--text-dim); margin: 0 0 10px; max-width: 70ch; }
+.wp .wp-get { margin-top: 8px; }
+.wp-notice { margin: 0 0 22px; padding: 14px 18px; border-radius: var(--r-m); border: 1px solid rgba(52,211,153,.35); background: rgba(52,211,153,.10); color: var(--text); }
+.wp-notice.err { border-color: rgba(245,165,36,.4); background: rgba(245,165,36,.10); }
+.wp-dialog { width: min(460px, calc(100vw - 32px)); padding: 0; border: 1px solid var(--line); border-radius: var(--r-l); background: var(--surface); color: var(--text); }
+.wp-dialog::backdrop { background: rgba(5,5,10,.72); }
+.wp-form { position: relative; padding: 26px 24px 22px; display: flex; flex-direction: column; }
+.wp-form h2 { font-size: 1.4rem; margin: 6px 0 4px; padding-right: 28px; }
+.wp-formlead { color: var(--text-dim); margin: 0 0 14px; font-size: 14px; }
+.wp-form label { font-size: 13px; color: var(--text-dim); margin: 8px 0 5px; }
+.wp-form input, .wp-form select { width: 100%; background: var(--ground-2); border: 1px solid var(--line); border-radius: var(--r-s); padding: 11px 12px; color: var(--text); font-family: inherit; font-size: 15px; }
+.wp-form input:focus, .wp-form select:focus { outline: 2px solid var(--violet-bright); outline-offset: 1px; border-color: var(--violet); }
+.wp-form .btn { margin-top: 14px; justify-content: center; }
+.wp-consent { font-size: 12px; color: var(--text-mute); margin: 14px 0 0; }
+.wp-close { position: absolute; top: 12px; right: 14px; width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--line); background: transparent; color: var(--text-dim); font-size: 20px; cursor: pointer; }
+.wp-trap { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+@media (max-width: 700px) { .wp { grid-template-columns: 1fr; padding: 18px; } .wp-cover { max-width: 200px; } }
+.wp .wp-get, .wp-form .btn { border: 0; cursor: pointer; font-family: inherit; }
