@@ -521,7 +521,7 @@
   .trust-chips { margin-top: 24px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
   .trust-chip { font-family: "IBM Plex Mono", monospace; font-size: 12px; letter-spacing: 0.05em; color: var(--text-dim); border: 1px solid var(--line); border-radius: 999px; padding: 7px 15px; background: var(--surface); }
 
-  /* ---- enquiry form ---- */
+  /* ---- inquiry form ---- */
   .enq { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 48px; align-items: start; }
   @media (max-width: 880px) { .enq { grid-template-columns: 1fr; gap: 28px; } }
   .enq-copy h2 { font-size: clamp(1.9rem, 4vw, 2.6rem); color: #fff; margin: 14px 0 12px; }
@@ -546,13 +546,16 @@
   .reveal { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
   .reveal.in { opacity: 1; transform: none; }
   @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+  .anchor-alias { display: block; scroll-margin-top: 80px; }
+  .enq-copy .tag-open { display: inline-flex; align-items: center; gap: 8px; font-family: "IBM Plex Mono", monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--violet-bright); border: 1px solid var(--violet-line); border-radius: 999px; padding: 5px 12px; }
+  .enq-copy .tag-open .pulse { width: 7px; height: 7px; border-radius: 50%; background: var(--won); box-shadow: 0 0 0 3px var(--won-wash); }
 </style>
 </head>
 <body>
 <div class="announce" id="announceBar">
   <div class="wrap">
-    <span>✦ Beta program now open — sign up for free and get the chance to be part of something amazing!</span>
-    <a class="link" href="#beta">Join the beta →</a>
+    <span>✦ Beta open: early teams get 25% off the list price, for life.</span>
+    <a class="link" href="#enquire" data-reason="demo">Book a demo →</a>
     <button class="x" id="announceClose" aria-label="Dismiss announcement" type="button">×</button>
   </div>
 </div>
@@ -580,13 +583,12 @@
     </a>
     <nav class="nav-links" aria-label="Primary">
       <a href="#why">Why Centaur</a>
-      <a href="#agents">The agents</a>
-      <a href="#real">See it live</a>
-      <a href="#platform">Platform</a>
+      <a href="meet-the-agents.html">The agents</a>
+      <a href="#flow">How it works</a>
+      <a href="platform.html">Product tour</a>
       <a href="#pricing">Pricing</a>
       <a href="integrations.html">Integrations</a>
       <a href="resources.html">Resources</a>
-      <a href="#beta">Beta</a>
     </nav>
     <div class="nav-cta">
       <a class="btn btn-primary" href="#enquire" data-reason="demo" style="padding:10px 18px;">Book a demo</a>
@@ -603,12 +605,12 @@
       <div class="hero-top">
         <span class="eyebrow">The AI-native CRM</span>
         <h1>How much more would your reps sell <span class="glow">without the admin?</span></h1>
-        <p class="lead">Centaur is the CRM with six AI agents built in. They answer enquiries, book meetings and keep every deal up to date from your emails and calls, so your reps can get back to selling.</p>
+        <p class="lead">Centaur is the CRM with six AI agents built in. They answer inquiries, book meetings and keep every deal up to date from your emails and calls, so your reps can get back to selling.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#enquire" data-reason="demo">Book a demo</a>
-          <a class="btn btn-ghost" href="#beta">Join the beta</a>
+          <a class="btn btn-ghost" href="platform.html">Take the product tour</a>
         </div>
-        <p class="hero-note">// live the same day · no implementation cost · bring your own AI</p>
+        <p class="hero-note">// live the same day · no implementation fee · no consultants</p>
       </div>
       <figure class="hero-shot">
         <div class="panel">
@@ -628,20 +630,6 @@
         </div>
         <figcaption><b>Your CRM, already up to date when you log in.</b> Watch the agents answer an inquiry, book the call, create the deal and keep it current as things change. You just approve and sell.</figcaption>
       </figure>
-    </div>
-  </section>
-
-  <!-- CLAIM BAND -->
-  <section class="claim-band">
-    <div class="wrap claim-inner">
-      <p class="claim-line">Your AI. Your usage. <span>Your costs.</span></p>
-      <p class="claim-sub"><strong>Zero markup on AI usage.</strong> Other CRMs charge a premium for AI
-        or ration it with credits. With Centaur, you connect your own AI provider and pay them directly,
-        at their rate. We don't resell it or hide a margin in it.</p>
-      <div class="trust-chips">
-        <span class="trust-chip">Built by a 30-year sales veteran</span>
-        <span class="trust-chip">Beta cohort open now</span>
-      </div>
     </div>
   </section>
 
@@ -680,60 +668,15 @@
           <div class="name-def">/ˈsɛntɔː/</div>
           <div class="def">Half human, half something faster and stronger — the two working as one creature. That's exactly what you get with Centaur CRM.</div>
           <hr />
-          <div class="k" style="margin-bottom:10px;">The rep's day, handed back</div>
+          <div class="k" style="margin-bottom:10px;">Every other CRM added AI. Centaur is made of it.</div>
           <ul>
-            <li>First contact and qualification, handled for you</li>
+            <li>Agents that act on your emails, not tips a person still has to follow up</li>
             <li>The CRM updated from the conversation, not after it</li>
-            <li>Deals kept up to date without a single manual note</li>
+            <li>No AI credits to count and no add-on to buy</li>
             <li>Reps free to do the one thing only they can do: close deals!</li>
           </ul>
         </aside>
       </div>
-    </div>
-  </section>
-
-  <!-- THE THESIS -->
-  <section id="thesis" class="alt glow-sec">
-    <div class="wrap">
-      <div class="sec-head">
-        <span class="eyebrow">AI in the fabric, not on top</span>
-        <h2>Every other CRM added AI. <span class="hl">Centaur is made of it.</span></h2>
-        <p class="lead">
-          AI will never replace people: it can't match the empathy a real person brings to a
-          customer relationship. But it can take on the work around them. Centaur was born in the
-          age of AI and built around it, not bolted onto a product designed years before.
-        </p>
-        <p class="lead">
-          Context is everything. You train Centaur like a new rep: your business, products,
-          competitors, sales process and how you qualify deals. Then it just works, and the best way
-          to see it is to try it.
-        </p>
-      </div>
-      <div class="vs">
-        <div class="vs-col">
-          <h3>AI bolted on</h3>
-          <div class="tagline">the way it's usually done</div>
-          <ul>
-            <li>An extra you pay for, on a separate line of the invoice</li>
-            <li>It suggests some text, but a person still has to do the work</li>
-            <li>Rationed with AI credits, so the more you use it, the more you pay</li>
-            <li>Surface-level: a few writing tips and a basic forecast</li>
-            <li>Added to a system that was designed years before AI existed</li>
-          </ul>
-        </div>
-        <div class="vs-col us">
-          <h3>AI in the fabric</h3>
-          <div class="tagline">the way Centaur works</div>
-          <ul>
-            <li>Built in, with no AI credits to count and no add-on to buy</li>
-            <li>Agents that read your emails and act on them: they reply, qualify, book meetings and update the CRM</li>
-            <li>You pay your AI provider directly, at their rate, with no AI upsell from us</li>
-            <li>It goes deep: deal risk, next best action and records that keep themselves up to date</li>
-            <li>Built around the agents from the very start, not the other way around</li>
-          </ul>
-        </div>
-      </div>
-      <a class="dl-link" href="downloads/centaur-crm-how-centaur-compares.pdf" download><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 20h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>How Centaur compares to Salesforce, HubSpot and more</span><small>PDF · 3 pages</small></a>
     </div>
   </section>
 
@@ -813,7 +756,7 @@
       <div class="sec-head">
         <span class="eyebrow">Not a mockup</span>
         <h2>This is the <span class="hl">real app.</span></h2>
-        <p class="lead">Every screen below is a genuine screenshot, not a design mockup. We used a
+        <p class="lead">Every screen here is a genuine screenshot, not a design mockup. We used a
           demo workspace filled with made-up companies and people, so nobody's real data
           (including ours!) shows up here.</p>
       </div>
@@ -821,10 +764,6 @@
         <div class="realcard wide">
           <img src="shots/pipeline-summary.jpg" width="1600" height="610" alt="Centaur CRM Pipeline summary in dark theme: a plain-English summary, open pipeline, quarter won, win rate, pipeline by stage and the quarter's forecast" loading="lazy" />
           <div class="realcap"><span class="t">Pipeline summary</span><span class="d">Your pipeline this week in plain English, for you, your team or the whole company.</span></div>
-        </div>
-        <div class="realcard wide">
-          <img src="shots/pipeline.jpg" width="1600" height="624" alt="Centaur CRM pipeline kanban board in dark theme with deal cards across Prospecting, Qualification, Proposal and Negotiation columns" loading="lazy" />
-          <div class="realcap"><span class="t">Pipeline</span><span class="d">Every open deal by stage. Just drag and drop to move them along.</span></div>
         </div>
         <div class="realcard">
           <img src="shots/accounts.jpg" width="1600" height="594" alt="Centaur CRM accounts list in dark theme showing a sortable, filterable, exportable table of company records" loading="lazy" />
@@ -834,19 +773,8 @@
           <img src="shots/today.jpg" width="1600" height="545" alt="Centaur CRM Today page in dark theme: the things that need the rep today, most important first, and progress against target" loading="lazy" />
           <div class="realcap"><span class="t">Today</span><span class="d">What needs you first, and how you're tracking.</span></div>
         </div>
-        <div class="realcard wide">
-          <img src="shots/account-detail.jpg" width="1600" height="614" alt="Centaur CRM account detail page in dark theme showing account health, a summary, contacts and activity in one layout" loading="lazy" />
-          <div class="realcap"><span class="t">Account detail</span><span class="d">Health, contacts and activity, all in one place.</span></div>
-        </div>
-        <div class="realcard wide">
-          <img src="shots/dash-stats.jpg" width="1600" height="550" alt="Centaur CRM custom dashboard in dark theme showing pipeline by product, pipeline by stage, deal status mix and new versus closed deals" loading="lazy" />
-          <div class="realcap"><span class="t">Custom dashboards — charts</span><span class="d">Build your own in My Dashboards and have it live in minutes, without waiting on anyone.</span></div>
-        </div>
-        <div class="realcard wide">
-          <img src="shots/dash-charts-revenue.jpg" width="1290" height="585" alt="Centaur CRM custom dashboard in dark theme showing a revenue trend, a rep leaderboard, a sales funnel and KPI tiles" loading="lazy" />
-          <div class="realcap"><span class="t">Custom dashboards — KPIs and leaderboard</span><span class="d">Revenue trend, rep leaderboard, funnel and headline numbers, all on one screen.</span></div>
-        </div>
       </div>
+      <a class="btn btn-ghost" href="platform.html" style="margin-top:26px;">Take the full product tour</a>
     </div>
   </section>
 
@@ -904,7 +832,8 @@
       <div class="sec-head">
         <span class="eyebrow">Pricing</span>
         <h2>Simple pricing. <span class="hl">No AI markup.</span></h2>
-        <p class="lead">Priced per user, per month, billed annually. Your AI usage is billed by your own AI provider, at their rate, so we never add a margin to it. No setup fee and no consultants.</p>
+        <p class="lead">Priced per user, per month, billed annually. No setup fee and no consultants.</p>
+        <p class="lead"><strong>Your AI. Your usage. Your costs.</strong> Other CRMs charge a premium for AI or ration it with credits. With Centaur, you connect your own AI provider and pay them directly, at their rate. We don't resell it or hide a margin in it.</p>
       </div>
       <div class="plans">
         <div class="plan">
@@ -938,260 +867,29 @@
       <p class="plan-terms">Prices are shown per user, per month, and billed annually in advance.</p>
       <div class="beta-offer">
         <b>Beta customers: 25% off, for life.</b> If you join the beta and choose to buy Centaur once the product is released, you'll get 25% off the list price of your subscription for as long as you're with us.
-        <a href="#beta">Join the beta</a>
+        <a href="#enquire" data-reason="beta">Ask about the beta</a>
       </div>
     </div>
   </section>
 
-  <!-- PLATFORM -->
-  <section id="platform">
-    <div class="wrap">
-      <div class="sec-head">
-        <span class="eyebrow">The platform</span>
-        <h2>And underneath the agents, <span class="hl">a complete CRM.</span></h2>
-        <p class="lead">Pipeline, forecasting, workflow automation, reporting, campaigns and
-          permissions. Everything you'd expect from a proper CRM, and the agents keep all of
-          it up to date for you.</p>
-        <a class="dl-link" href="downloads/centaur-crm-product-overview.pdf" download><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 20h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Product overview</span><small>PDF · 2 pages</small></a>
-      </div>
-
-      <div class="shots">
-
-        <div class="shot">
-          <div class="shot-copy">
-            <h3>A pipeline you can trust at a glance</h3>
-            <p>Because the agents keep it up to date, the board shows where your deals
-              really are, not where someone last remembered to drag them.</p>
-          </div>
-          <div class="panel">
-            <div class="panel-head">
-              <span class="panel-title"><span class="dot"></span> Pipeline</span>
-              <span class="panel-tag">real capture</span>
-            </div>
-            <img class="panel-shot" src="shots/pipeline.jpg" width="1600" height="624" alt="Centaur CRM pipeline kanban board with deal cards across Prospecting, Qualification, Proposal and Negotiation" loading="lazy" />
-          </div>
-        </div>
-
-        <div class="shot">
-          <div class="shot-copy">
-            <h3>Workflow automation for the routine stuff</h3>
-            <p>Pick a trigger, add some conditions and choose what happens, with waits
-              and multi-step sequences if you need them. When an activity is completed, tell
-              the owner. When a deal stalls, give someone a nudge. New rules start switched
-              off, so you can test them on your real data before turning them on.</p>
-          </div>
-          <div class="panel">
-            <div class="panel-head">
-              <span class="panel-title"><span class="dot"></span> Workflows</span>
-              <span class="panel-tag">real capture</span>
-            </div>
-            <img class="panel-shot" src="shots/workflow-list.jpg" width="1600" height="637" alt="Centaur CRM Settings screen showing a saved workflow: when an activity is completed, notify the record owner" loading="lazy" />
-          </div>
-        </div>
-
-        <div class="shot">
-          <div class="shot-copy">
-            <h3>Teams calls turned into notes, automatically</h3>
-            <p>Connect Microsoft Teams, and every call transcript becomes a summary on the
-              deal: what was discussed, what was agreed and the next steps. Any blank fields
-              on the record get filled in from what was said, too.</p>
-          </div>
-          <div class="panel">
-            <div class="panel-head">
-              <span class="panel-title"><span class="dot"></span> Call summary · Northwind Logistics</span>
-              <span class="panel-tag">from Teams transcript</span>
-            </div>
-            <div class="tr">
-              <div class="tr-sec">Discussed</div>
-              <div class="tr-line">Rollout across 3 regional sales teams; current tool is being sunset in Q1.</div>
-              <div class="tr-sec">Agreed</div>
-              <div class="tr-line"><b>Budget</b> confirmed at £50k · <b>Economic buyer</b>: CFO, joining the next call.</div>
-              <div class="tr-sec">Next steps</div>
-              <div class="tr-line">Send security overview by Friday · schedule technical review week of the 14th.</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="shot">
-          <div class="shot-copy">
-            <h3>Reports that read like a briefing</h3>
-            <p>A Today page that tells each rep what needs them first, a plain-English
-              pipeline summary for you, your team or the whole company, and dashboards you can build from any of your data:
-              funnels, leaderboards, revenue trends and deal mix, all with the same clean look.</p>
-          </div>
-          <div class="panel">
-            <div class="panel-head">
-              <span class="panel-title"><span class="dot"></span> Sales Overview dashboard</span>
-              <span class="panel-tag">real capture</span>
-            </div>
-            <img class="panel-shot" src="shots/dash-charts-funnel.jpg" width="1600" height="590" alt="Centaur CRM custom dashboard showing a revenue trend, a rep leaderboard, a sales funnel and KPI tiles" loading="lazy" />
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- INTEGRATIONS -->
-  <section id="integrations">
-    <div class="wrap">
-      <div class="sec-head">
-        <span class="eyebrow">Integrations</span>
-        <h2>Works with the tools <span class="hl">your team already uses.</span></h2>
-        <p class="lead">Centaur is built around Microsoft 365: the agents work in your reps' Outlook mailboxes and calendars, and turn recorded Teams calls into notes. The AI runs on your own Anthropic account. Alerts and approvals go to Slack or Teams, prospects come from the data provider you already use, and your website forms and landing pages feed straight in. A public API, Zapier, single sign-on with Entra ID or Okta, Google Workspace and Zoom are on the roadmap.</p>
-      </div>
-      <div class="int-chips">
-        <span class="trust-chip">Outlook email</span><span class="trust-chip">Outlook calendar</span><span class="trust-chip">Teams transcripts</span><span class="trust-chip">Anthropic</span><span class="trust-chip">Slack</span><span class="trust-chip">Apollo</span><span class="trust-chip">ZoomInfo</span><span class="trust-chip">Lusha</span><span class="trust-chip">People Data Labs</span><span class="trust-chip">Excel and CSV</span>
-      </div>
-      <a class="btn btn-ghost" href="integrations.html" style="margin-top:22px;">See all integrations and the roadmap</a>
-    </div>
-  </section>
-
-  <!-- FEATURE GRID -->
-  <section id="more" class="alt glow-sec">
-    <div class="wrap">
-      <div class="sec-head">
-        <span class="eyebrow">Everything else it does</span>
-        <h2>Everything else you'd want from a CRM, <span class="hl">without the busywork.</span></h2>
-      </div>
-      <div class="fgrid">
-        <div class="feat"><h4><span class="fm"></span>Pipeline &amp; forecasting</h4><p>Set up your own stages and sales methodology. Price products per user, per site or as a one-off item, sell in more than one currency at your own exchange rates, and let forecast automation keep each deal's rating and category up to date.</p></div>
-        <div class="feat"><h4><span class="fm"></span>Campaigns &amp; landing pages</h4><p>Build emails with a drag-and-drop editor, send them from your own mailbox, publish landing pages, run A/B tests and see which campaigns turned into won revenue.</p></div>
-        <div class="feat"><h4><span class="fm"></span>Prospecting &amp; lead routing</h4><p>Search your connected data provider, such as Apollo, for people who match your ideal customer and add them in one click. Then hand out leads to reps in rotation or by your own rules before any agent gets involved, with a holding queue for your sales director when a lead needs a human decision.</p></div>
-        <div class="feat"><h4><span class="fm"></span>Roles &amp; permissions</h4><p>Detailed permissions, your own roles, easy record reassignment, a 30-day recycle bin for anything deleted and a full audit trail that shows who (or which agent) changed what.</p></div>
-        <div class="feat"><h4><span class="fm"></span>Built-in training</h4><p>Self-paced learning guides inside the platform, so new reps can get up to speed without pulling anyone else away from selling.</p></div>
-        <div class="feat"><h4><span class="fm"></span>Slack &amp; Teams</h4><p>Approve a draft, respond to an escalation or add a lead straight from a direct message. A daily digest and a home tab keep each rep in the loop, in the tools they already use.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- DOWNLOADS -->
-  <section id="downloads">
-    <div class="wrap">
-      <div class="sec-head">
-        <span class="eyebrow">Downloads</span>
-        <h2>Take it <span class="hl">with you.</span></h2>
-        <p class="lead">Want to read up later, or show your team? Here's everything in three
-          short guides. No forms, no sign-up, just download and go.</p>
-      </div>
-      <div class="dl-grid">
-        <div class="dl-card">
-          <span class="k">Product overview</span>
-          <h3>Centaur CRM at a glance</h3>
-          <p>What Centaur is, how the agents give your reps their day back, and everything
-            else a sales team needs, on two pages.</p>
-          <a class="dl-link" href="downloads/centaur-crm-product-overview.pdf" download><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 20h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download</span><small>PDF · 2 pages</small></a>
-        </div>
-        <div class="dl-card">
-          <span class="k">Meet the agents</span>
-          <h3>The team that never clocks off</h3>
-          <p>Each AI agent, what it does, when it works and what it will never do, plus how
-            you stay in charge.</p>
-          <a class="dl-link" href="downloads/centaur-crm-meet-the-agents.pdf" download><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 20h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download</span><small>PDF · 2 pages</small></a>
-        </div>
-        <div class="dl-card">
-          <span class="k">How Centaur compares</span>
-          <h3>Five good CRMs, one built around AI</h3>
-          <p>An honest look at Centaur next to Salesforce, HubSpot, monday CRM, Dynamics 365
-            and Pipedrive, including who each one suits best.</p>
-          <a class="dl-link" href="downloads/centaur-crm-how-centaur-compares.pdf" download><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 20h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Download</span><small>PDF · 3 pages</small></a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SETUP -->
-  <section id="setup" class="alt glow-sec">
-    <div class="wrap">
-      <div class="setup-grid">
-        <div>
-          <span class="eyebrow">Getting started</span>
-          <h2 style="font-size:clamp(2rem,4vw,2.7rem);margin-top:14px;color:#fff;">Up and running the same day. <span class="hl">No consultants needed.</span></h2>
-          <p class="lead" style="margin-top:16px;">As soon as you sign up, you're in,
-            and a guided setup walks you through everything. Give it your website, and the AI
-            drafts a brief about your business for you to check. Upload the spreadsheets you
-            already have, and Centaur matches the columns for you. Your IT admin gets the email
-            setup steps in one click.</p>
-          <ul class="setup-list">
-            <li>Send your IT admin the Microsoft 365 steps and invite your reps from a list</li>
-            <li>Enter your website, and the AI drafts your product, market and positioning for you to correct</li>
-            <li><span>Import your spreadsheets as they are, with custom fields for any columns that don't fit. <a href="switching.html" style="color:var(--violet-bright);text-decoration:underline;text-underline-offset:2px;">Moving from another CRM? We'll guide you through it.</a></span></li>
-            <li>Choose whether the agents draft replies for you to check or run on their own</li>
-            <li>Sit back and watch the first inquiries come in!</li>
-          </ul>
-        </div>
-        <div class="wizard" role="img" aria-label="Example: step 6 of AI Training">
-          <div class="wz-h">AI Training · step 6 of 8</div>
-          <div class="wz-q">How does your team qualify a deal?</div>
-          <div class="opt sel">BANT — Budget, Authority, Need, Timeline</div>
-          <div class="opt">MEDDPIC</div>
-          <div class="opt">SPIN</div>
-          <div class="opt">We don't use a formal framework</div>
-          <div class="wz-prog"><i></i></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BETA -->
-  <section id="beta">
-    <div class="wrap">
-      <div class="beta">
-        <div>
-          <span class="tag-open"><span class="pulse"></span> Beta program · open now</span>
-          <h2>Get in early and keep your <span class="hl">discount for life.</span></h2>
-          <p>We're inviting a limited number of sales teams to help shape Centaur with
-            us. As a thank-you, if you choose to buy Centaur once it's released, you'll get 25% off
-            the list price of your subscription, for life.</p>
-          <ul>
-            <li>The full platform: all six agents, workflow automation, reporting and integrations</li>
-            <li>Set up the same day, with no implementation fee</li>
-            <li>Bring your own AI, paid at cost with zero markup</li>
-            <li>25% off the list price of your subscription, for life</li>
-            <li>A direct line to the people building it</li>
-          </ul>
-        </div>
-        <div class="beta-form beta-ask">
-          <h3>Want in?</h3>
-          <p>Tell us about your company and the size of your sales team. We'll reply with
-            the beta agreement and everything you need to get started.</p>
-          <a class="btn btn-primary" href="#enquire" data-reason="beta">Request beta access</a>
-          <p class="fine">Or email <a href="mailto:info@centaurcrm.com">info@centaurcrm.com</a></p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CLOSING -->
-  <section id="demo" class="alt close-cta glow-sec">
-    <canvas id="ctaCanvas" aria-hidden="true"></canvas>
-    <div class="wrap">
-      <span class="eyebrow">See it on your own pipeline</span>
-      <h2>Give your sales team <span class="hl">their time back.</span></h2>
-      <p>Book a 30-minute call, and we'll look at your incoming emails together and
-        show you what the agents would have handled for you last week.</p>
-      <div class="close-actions">
-        <a class="btn btn-primary" href="#enquire" data-reason="demo">Book a demo</a>
-        <a class="btn btn-ghost" href="#beta">Join the beta instead</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ENQUIRY FORM: posts to the CRM, which raises a "new website enquiry" card -->
+  <!-- GET IN TOUCH: beta offer + the form. Posts to the CRM, which raises a "new website inquiry" card -->
+  <span id="beta" class="anchor-alias"></span><span id="demo" class="anchor-alias"></span>
   <section id="enquire">
     <div class="wrap">
       <div class="enq">
         <div class="enq-copy">
-          <span class="eyebrow">Get in touch</span>
-          <h2>Tell us about <span class="hl">your team.</span></h2>
-          <p>Book a demo, ask about the beta, or just ask us a question. A real person
-            reads every message and replies within one working day.</p>
+          <span class="tag-open"><span class="pulse"></span> Beta program · open now</span>
+          <h2>Give your sales team <span class="hl">their time back.</span></h2>
+          <p>Book a 30-minute call, and we'll look at your incoming emails together and show you
+            what the agents would have handled for you last week. A real person reads every
+            message and replies within one working day.</p>
           <ul>
-            <li>A 30-minute call, on your own pipeline</li>
-            <li>No sales pressure and no obligation</li>
-            <li>Your details are only used to reply to you</li>
+            <li>Beta teams get 25% off the list price, for life, if they buy after release</li>
+            <li>The full platform, set up the same day with no implementation fee</li>
+            <li>A direct line to the people building it</li>
+            <li>No sales pressure, and your details are only used to reply to you</li>
           </ul>
-        </div>
+                </div>
         <form class="enq-form" id="enquiryForm" method="post" action="https://app.centaurcrm.com/api/track/enquiry">
           <input type="hidden" name="formId" value="e7vmh72tmvpw4tvb" />
           <input type="hidden" name="startedAt" id="enqStartedAt" value="" />
@@ -1242,14 +940,11 @@
     </div>
     <div class="foot-links">
       <a href="#why">Why Centaur</a>
-      <a href="#agents">The agents</a>
-      <a href="#real">See it live</a>
-      <a href="#platform">Platform</a>
-      <a href="#downloads">Downloads</a>
-      <a href="#beta">Beta</a>
+      <a href="meet-the-agents.html">Meet the agents</a>
+      <a href="platform.html">Product tour</a>
+      <a href="#pricing">Pricing</a>
       <a href="#enquire" data-reason="demo">Book a demo</a>
       <a href="#enquire">Contact us</a>
-      <a href="meet-the-agents.html">Meet the agents</a>
       <a href="ai-sales-agents.html">AI agents</a>
       <a href="compare.html">Compare</a>
       <a href="resources.html">Resources</a>

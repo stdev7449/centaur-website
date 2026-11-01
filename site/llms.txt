@@ -1,12 +1,12 @@
 # Centaur CRM
 
-> Centaur CRM is an AI-native CRM for B2B sales teams, with six built-in AI sales agents that answer inbound enquiries, qualify prospects, book meetings, keep deals up to date and prepare reps for calls. It works with Microsoft 365 (Outlook, calendar and Teams). Customers connect their own AI provider and pay it directly, so there is no AI markup and no AI credit allowance. Centaur is in an open beta.
+> Centaur CRM is an AI-native CRM for B2B sales teams, with six built-in AI sales agents that answer inbound inquiries, qualify prospects, book meetings, keep deals up to date and prepare reps for calls. It works with Microsoft 365 (Outlook, calendar and Teams). Customers connect their own AI provider and pay it directly, so there is no AI markup and no AI credit allowance. Centaur is in an open beta.
 
 Centaur was founded and built by a sales professional with 30 years of selling experience. The idea: reps should spend their time selling, and the CRM should keep itself up to date from their emails, calls and meetings.
 
 ## What it does
 
-- **Outreach agent ("The Opener"):** replies to inbound enquiries in the rep's voice, qualifies against the team's own methodology (for example BANT or MEDDPIC), handles objections from the team's battle cards, offers real free times from the rep's calendar, books the meeting and creates the account, contact and opportunity. It can draft replies for a person to approve, or run on its own.
+- **Outreach agent ("The Opener"):** replies to inbound inquiries in the rep's voice, qualifies against the team's own methodology (for example BANT or MEDDPIC), handles objections from the team's battle cards, offers real free times from the rep's calendar, books the meeting and creates the account, contact and opportunity. It can draft replies for a person to approve, or run on its own.
 - **Opportunity agent ("The Analyst"):** reads emails and call notes on open deals and updates budget, stakeholders, timeline and competitors, keeps a running deal summary and flags risks with the exact quote. It never sends anything itself and never overwrites a figure a person typed in.
 - **Meeting brief agent ("The Briefer"):** each morning, writes a brief for every call on the calendar, with the deal's history and web research on the company.
 - **Call notes ("The Scribe"):** turns recorded Microsoft Teams calls into a summary of what was discussed, what was agreed and the next steps, and fills in blank fields on the deal.
@@ -16,7 +16,7 @@ Centaur was founded and built by a sales professional with 30 years of selling e
 
 ## Good fit
 
-- B2B sales teams on Microsoft 365 who want inbound enquiries answered and qualified quickly without hiring more people.
+- B2B sales teams on Microsoft 365 who want inbound inquiries answered and qualified quickly without hiring more people.
 - Teams that want a CRM that stays up to date from email and calls instead of manual data entry.
 - Teams that want AI without paying a CRM vendor's AI markup or counting credits.
 
@@ -40,6 +40,7 @@ Same-day setup with no implementation fee and no consultants: a guided setup dra
 - [How Centaur compares with Salesforce, HubSpot, monday CRM, Dynamics 365 and Pipedrive (PDF)](https://www.centaurcrm.com/downloads/centaur-crm-how-centaur-compares.pdf)
 - [Compare: Centaur vs Salesforce, HubSpot, monday CRM, Dynamics 365 and Pipedrive](https://www.centaurcrm.com/compare.html)
 - [Centaur vs Dynamics 365 Sales](https://www.centaurcrm.com/centaur-vs-dynamics-365.html): for teams on Microsoft 365 choosing between the two
+- [Product tour](https://www.centaurcrm.com/platform.html): real screenshots, the full platform under the agents, integrations and how setup works
 - [Meet the agents](https://www.centaurcrm.com/meet-the-agents.html): the six agents in detail (the Opener, the Analyst, the Briefer, the Scribe, the Copywriter, the Co-pilot), with real screenshots
 - [AI sales agents](https://www.centaurcrm.com/ai-sales-agents.html): what each of the six agents does and how you stay in control
 - [Our story](https://www.centaurcrm.com/our-story.html): why a 30-year sales veteran built Centaur
