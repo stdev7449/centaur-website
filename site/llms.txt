@@ -45,6 +45,7 @@ Same-day setup with no implementation fee and no consultants: a guided setup dra
 - [Switching to Centaur](https://www.centaurcrm.com/switching.html): during the beta we guide your import on a Microsoft Teams call, at no cost; your data never leaves your hands
 - [Automated CRM data entry](https://www.centaurcrm.com/automated-crm-data-entry.html): how deals stay up to date from email and Teams calls, and the rules the agents follow
 - [Resources: white papers](https://www.centaurcrm.com/resources.html): five free papers on CRM and AI in sales (speed to lead, the cost of CRM AI, self-updating pipelines, trustworthy AI), emailed on request
+- [Integrations](https://www.centaurcrm.com/integrations.html): available now (Microsoft 365 email, calendar and Teams transcripts, your own Anthropic account, Slack, Teams posts, Apollo/PDL/Lusha/ZoomInfo, imports, forms) and the roadmap (public API, Zapier/Make, SAML SSO with Entra ID/Okta, Teams app, Outlook add-in, Power BI, Google Workspace, Zoom, phone systems, DocuSign/PandaDoc)
 - [FAQ](https://www.centaurcrm.com/faq.html)
 - [Security](https://www.centaurcrm.com/security.html)
 - [Privacy](https://www.centaurcrm.com/privacy.html)
