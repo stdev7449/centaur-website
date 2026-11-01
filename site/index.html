@@ -237,8 +237,33 @@
   .calc-big.won { color: var(--won); }
   .calc-lbl { color: var(--text-mute); font-size: .92rem; margin: 0 0 20px; }
   .calc-tag { display: inline-block; font-family: "IBM Plex Mono", monospace; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--risk); background: var(--risk-wash); border: 1px solid rgba(245,165,36,.3); border-radius: 999px; padding: 4px 10px; margin-bottom: 14px; }
+  .calc-roi { margin: 4px 0 20px; padding: 14px 16px; border: 1px solid var(--violet-line); border-radius: var(--r-m); background: var(--violet-wash); }
+  .calc-roi-row { display: flex; justify-content: space-between; gap: 12px; padding: 5px 0; color: var(--text-dim); font-size: .95rem; }
+  .calc-roi-row b { color: #fff; font-family: "Archivo", sans-serif; white-space: nowrap; }
+  .calc-row select.calc-cur { width: 100%; background: var(--ground-2); border: 1px solid var(--line); border-radius: var(--r-s); padding: 9px 10px; color: var(--text); font-family: inherit; font-size: 15px; }
+  .calc-roi-note { margin: 8px 0 0; font-size: .8rem; color: var(--text-mute); line-height: 1.45; }
+  .calc-note a { color: var(--violet-bright); text-decoration: underline; text-underline-offset: 2px; }
   .calc-note { color: var(--text-mute); font-size: .82rem; line-height: 1.5; margin: 18px 0 0; padding-top: 16px; border-top: 1px solid var(--line-soft); }
   @media (max-width: 860px) { .calc { grid-template-columns: 1fr; } .calc-out { position: static; } }
+  /* Pricing */
+  .price-cur { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: 3px; margin-bottom: 22px; }
+  .price-cur button { border: 0; background: transparent; color: var(--text-dim); font: inherit; font-size: 14px; font-weight: 600; padding: 7px 16px; border-radius: 999px; cursor: pointer; }
+  .price-cur button.on { background: var(--violet); color: #0B0A12; }
+  .plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .plan { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-l); padding: 26px 24px; box-shadow: var(--shadow-card); }
+  .plan-hi { border-color: var(--violet); background: linear-gradient(180deg, rgba(139,124,246,.12), transparent 55%), var(--surface); }
+  .plan-badge { position: absolute; top: -12px; left: 24px; background: var(--violet); color: #0B0A12; font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 999px; }
+  .plan h3 { margin: 0; font-family: "Archivo", sans-serif; font-size: 1.25rem; color: #fff; }
+  .plan-price { margin: 10px 0 6px; display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .plan-price .pr { font-family: "Archivo", sans-serif; font-weight: 800; font-size: 2.6rem; color: #fff; letter-spacing: -0.02em; }
+  .plan-price .per { color: var(--text-mute); font-size: .92rem; }
+  .plan-sum { color: var(--text); font-weight: 600; margin: 0 0 12px; }
+  .plan ul { margin: 0; padding-left: 18px; color: var(--text-dim); font-size: .95rem; }
+  .plan li + li { margin-top: 6px; }
+  .beta-offer { margin-top: 22px; padding: 18px 20px; border-radius: var(--r-m); border: 1px solid rgba(52,211,153,.35); background: var(--won-wash); color: var(--text-dim); }
+  .beta-offer b { color: #fff; }
+  .beta-offer a { color: var(--violet-bright); text-decoration: underline; text-underline-offset: 2px; margin-left: 4px; font-weight: 600; }
+  @media (max-width: 900px) { .plans { grid-template-columns: 1fr; } }
   .alt { background: var(--ground-2); border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft); }
   .glow-sec { position: relative; overflow: hidden; }
   .glow-sec::before {
@@ -555,6 +580,7 @@
       <a href="#real">See it live</a>
       <a href="#platform">Platform</a>
       <a href="#downloads">Downloads</a>
+      <a href="#pricing">Pricing</a>
       <a href="resources.html">Resources</a>
       <a href="#beta">Beta</a>
     </nav>
@@ -910,8 +936,9 @@
         <form class="calc-in" onsubmit="return false" aria-label="Time-saved calculator inputs">
           <h3>Your team</h3>
           <p class="calc-sub">Change any number. The results update as you type.</p>
+          <div class="calc-row"><label for="cCur">Currency</label><select id="cCur" class="calc-cur"><option value="USD">US$</option><option value="GBP">£ GBP</option></select></div>
           <div class="calc-row"><label for="cReps">Sales reps</label><input id="cReps" type="number" inputmode="numeric" min="1" max="10000" value="15" /></div>
-          <div class="calc-row"><label for="cRate">Cost of a rep's hour ($)<small>Salary, commission and overheads</small></label><input id="cRate" type="number" inputmode="decimal" min="0" max="10000" value="50" /></div>
+          <div class="calc-row"><label for="cRate">Cost of a rep's hour (<span class="cSym">$</span>)<small>Salary, commission and overheads</small></label><input id="cRate" type="number" inputmode="decimal" min="0" max="10000" value="50" /></div>
           <div class="calc-row"><label for="cWeeks">Working weeks a year</label><input id="cWeeks" type="number" inputmode="numeric" min="1" max="52" value="46" /></div>
           <div class="calc-group">
             <h3>Each rep's week</h3>
@@ -931,9 +958,56 @@
           <p class="calc-lbl">saved across the team in a year</p>
           <div class="calc-big won" id="cValue">$140,875</div>
           <p class="calc-lbl">worth of selling time a year</p>
+          <div class="calc-roi">
+            <div class="calc-roi-row"><span>Centaur Enterprise for your team</span><b id="cCost">$3,000 a month</b></div>
+            <div class="calc-roi-row"><span>Pays for itself in</span><b id="cPayback">0.3 months</b></div>
+            <div class="calc-roi-row"><span>Return on what you pay</span><b id="cMultiple">3.9×</b></div>
+            <p class="calc-roi-note">Based on efficiency savings alone. It doesn't take into account any increase in revenue through a more efficient team and sales process.</p>
+          </div>
           <a class="btn btn-primary" href="#enquire" data-reason="demo">Book a demo</a>
-          <p class="calc-note">An estimate, not a guarantee. The minutes per task are the same ones Centaur uses in its weekly summary email. Your results depend on your team, your sales process and how much you let the agents do.</p>
+          <p class="calc-note">An estimate, not a guarantee. The savings and return are based on efficiencies alone, the hours of admin the agents take on, and don't take into account any increase in revenue through a more efficient team and sales process. The minutes per task are the same ones Centaur uses in its weekly summary email. The cost is the Enterprise plan's list price (<a href="#pricing">$200 / £150 per user a month</a>), before any beta discount, and doesn't include your own AI usage. Your results depend on your team, your sales process and how much you let the agents do.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Pricing</span>
+        <h2>Simple pricing. <span class="hl">No AI markup.</span></h2>
+        <p class="lead">Pay per user, per month. Your AI usage is billed by your own AI provider, at their rate, so we never add a margin to it. No setup fee and no consultants.</p>
+      </div>
+      <div class="price-cur" role="group" aria-label="Currency">
+        <button type="button" class="on" data-cur="usd">US$</button><button type="button" data-cur="gbp">£ GBP</button>
+      </div>
+      <div class="plans">
+        <div class="plan">
+          
+          <h3>Starter</h3>
+          <div class="plan-price"><span class="pr" data-gbp="£25" data-usd="$35">$35</span><span class="per">per user / month</span></div>
+          <p class="plan-sum">The core CRM.</p>
+          <ul><li>Accounts, contacts, leads and opportunities</li><li>Pipeline, activities and tasks</li><li>Dashboards and reports</li><li>Lead routing, roles and permissions</li><li>Import and export</li></ul>
+        </div>
+        <div class="plan">
+          
+          <h3>Pro</h3>
+          <div class="plan-price"><span class="pr" data-gbp="£75" data-usd="$100">$100</span><span class="per">per user / month</span></div>
+          <p class="plan-sum">Everything in Starter, plus email and marketing.</p>
+          <ul><li>Outlook email and calendar integration</li><li>Email campaigns and landing pages</li><li>Marketing lists</li><li>Outreach sequences</li><li>Workflow automation</li></ul>
+        </div>
+        <div class="plan plan-hi">
+          <span class="plan-badge">Includes the AI agents</span>
+          <h3>Enterprise</h3>
+          <div class="plan-price"><span class="pr" data-gbp="£150" data-usd="$200">$200</span><span class="per">per user / month</span></div>
+          <p class="plan-sum">Everything in Pro, plus the AI agents.</p>
+          <ul><li>AI agents: outreach, deal updates, meeting briefs and call notes</li><li>AI assistant, drafts and account briefs</li><li>Teams call transcripts</li><li>Signals and sourced competitor battle cards</li><li>AI Training and AI prospecting</li></ul>
+        </div>
+      </div>
+      <div class="beta-offer">
+        <b>Beta customers: 25% off, for life.</b> If you join the beta and choose to buy Centaur once the product is released, you'll get 25% off the list price of your subscription for as long as you're with us.
+        <a href="#beta">Join the beta</a>
       </div>
     </div>
   </section>
@@ -1121,13 +1195,13 @@
           <span class="tag-open"><span class="pulse"></span> Beta program · open now</span>
           <h2>Get in early and keep your <span class="hl">discount for life.</span></h2>
           <p>We're inviting a limited number of sales teams to help shape Centaur with
-            us. As a thank-you, beta customers lock in a lifetime discount for as long as
-            they're with us.</p>
+            us. As a thank-you, if you choose to buy Centaur once it's released, you'll get 25% off
+            the list price of your subscription, for life.</p>
           <ul>
             <li>The full platform: all six agents, workflow automation, reporting and integrations</li>
             <li>Set up the same day, with no implementation fee</li>
             <li>Bring your own AI, paid at cost with zero markup</li>
-            <li>A lifetime discount that never expires</li>
+            <li>25% off the list price of your subscription, for life</li>
             <li>A direct line to the people building it</li>
           </ul>
         </div>
@@ -1242,6 +1316,18 @@
 </footer>
 
 <script>
+// Pricing: show list prices in US$ or £.
+(function () {
+  var box = document.querySelector('.price-cur'); if (!box) return;
+  box.addEventListener('click', function (e) {
+    var b = e.target.closest('button'); if (!b) return;
+    var cur = b.getAttribute('data-cur');
+    box.querySelectorAll('button').forEach(function (x) { x.classList.toggle('on', x === b); });
+    document.querySelectorAll('.plan-price .pr').forEach(function (p) { p.textContent = p.getAttribute('data-' + cur); });
+  });
+})();
+</script>
+<script>
 // Time-saved calculator: reps × minutes saved a week × working weeks × hourly cost. An illustration.
 (function () {
   var $ = function (id) { return document.getElementById(id); };
@@ -1255,8 +1341,21 @@
     var teamHours = perRep * num('cReps') * num('cWeeks');
     $('cPerRep').textContent = (Math.round(perRep * 10) / 10).toLocaleString('en-US') + (perRep === 1 ? ' hour' : ' hours');
     $('cTeamHours').textContent = fmt(teamHours) + ' hours';
-    $('cValue').textContent = '$' + fmt(teamHours * num('cRate'));
+    var cur = $('cCur').value === 'GBP' ? { sym: '£', price: 150 } : { sym: '$', price: 200 };
+    document.querySelectorAll('.cSym').forEach(function (e) { e.textContent = cur.sym; });
+    var yearValue = teamHours * num('cRate');
+    $('cValue').textContent = cur.sym + fmt(yearValue);
+    // What Centaur Enterprise costs this team, and how fast the time saved covers it.
+    var monthCost = cur.price * num('cReps');
+    var monthValue = yearValue / 12;
+    $('cCost').textContent = cur.sym + fmt(monthCost) + ' a month';
+    if (monthValue > 0 && monthCost > 0) {
+      var months = monthCost / monthValue;
+      $('cPayback').textContent = (months < 0.1 ? 'under 0.1' : (Math.round(months * 10) / 10).toLocaleString('en-US')) + (months > 1.05 ? ' months' : ' month' + (months < 0.95 ? 's' : ''));
+      $('cMultiple').textContent = (Math.round((monthValue / monthCost) * 10) / 10).toLocaleString('en-US') + '×';
+    } else { $('cPayback').textContent = '—'; $('cMultiple').textContent = '—'; }
   }
+  $('cCur').addEventListener('change', update);
   $('calc').addEventListener('input', update);
   update();
 })();
