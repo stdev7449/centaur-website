@@ -908,27 +908,12 @@
     var teamHours = perRep * num('cReps') * num('cWeeks');
     $('cPerRep').textContent = (Math.round(perRep * 10) / 10).toLocaleString('en-US') + (perRep === 1 ? ' hour' : ' hours');
     $('cTeamHours').textContent = fmt(teamHours) + ' hours';
-    var cur = $('cCur').value === 'GBP' ? { sym: '£', price: 75 } : { sym: '$', price: 100 };
+    var cur = $('cCur').value === 'GBP' ? { sym: '£' } : { sym: '$' };
     document.querySelectorAll('.cSym').forEach(function (e) { e.textContent = cur.sym; });
     var yearValue = teamHours * num('cRate');
     $('cValue').textContent = cur.sym + fmt(yearValue);
-    // What Centaur costs this team (the beta members' price), and how fast the time saved covers it.
-    var users = Math.max(1, num('cReps'));
-    var monthCost = cur.price * users;
-    var monthValue = yearValue / 12;
-    $('cCost').textContent = cur.sym + fmt(monthCost * 12) + ' a year';
-    $('cCostMonth').textContent = '(' + cur.sym + fmt(monthCost) + ' a month)';
-    if (monthValue > 0 && monthCost > 0) {
-      // Payback: how many months of time saved cover a full year of Centaur.
-      var months = (monthCost * 12) / monthValue;
-      var days = Math.max(1, Math.round(months * 30.4));
-      $('cPayback').textContent = months < 1
-        ? (days < 14 ? days + (days === 1 ? ' day' : ' days') : Math.round(days / 7) + ' weeks')
-        : (Math.round(months * 10) / 10).toLocaleString('en-US') + (Math.round(months * 10) === 10 ? ' month' : ' months');
-      $('cMultiple').textContent = (Math.round((monthValue / monthCost) * 10) / 10).toLocaleString('en-US') + '×';
-    } else { $('cPayback').textContent = '—'; $('cMultiple').textContent = '—'; }
   }
-  // Default hourly cost per currency, at the same rate as the prices ($100 = £75):
+  // Default hourly cost per currency, at roughly the exchange rate:
   // $50 = £37.50. Switching currency swaps the default only if it hasn't been changed.
   var RATE_DEFAULT = { USD: 50, GBP: 37.5 };
   var lastCur = $('cCur').value;
