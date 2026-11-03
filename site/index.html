@@ -816,14 +816,8 @@
           <p class="calc-lbl">saved across the team in a year</p>
           <div class="calc-big won" id="cValue">$140,875</div>
           <p class="calc-lbl">worth of selling time a year</p>
-          <div class="calc-roi">
-            <div class="calc-roi-row"><span>Centaur for your team <small id="cCostMonth" class="calc-roi-sub">($1,500 a month)</small></span><b id="cCost">$18,000 a year</b></div>
-            <div class="calc-roi-row"><span>A year of Centaur pays for itself in</span><b id="cPayback">1.5 months</b></div>
-            <div class="calc-roi-row"><span>Return on what you pay</span><b id="cMultiple">7.8×</b></div>
-            <p class="calc-roi-note">Based on efficiency savings alone. It doesn't take into account any increase in revenue through a more efficient team and sales process.</p>
-          </div>
           <a class="btn btn-primary" href="#enquire" data-reason="demo">Book a demo</a>
-          <p class="calc-note">An estimate, not a guarantee. The savings and return are based on efficiencies alone, the hours of admin the agents take on, and don't take into account any increase in revenue through a more efficient team and sales process. The minutes per task are the same ones Centaur uses in its weekly summary email. The cost is the price beta members keep after the beta (<a href="#pricing">$100 / £75 per user a month</a>), and doesn't include your own AI usage. Your results depend on your team, your sales process and how much you let the agents do.</p>
+          <p class="calc-note">An estimate, not a guarantee. The savings are based on efficiencies alone, the hours of admin the agents take on, and don't take into account any increase in revenue through a more efficient team and sales process. The minutes per task are the same ones Centaur uses in its weekly summary email. Your results depend on your team, your sales process and how much you let the agents do.</p>
         </div>
       </div>
     </div>
@@ -847,13 +841,14 @@
           <ul><li>The complete CRM: pipeline, forecasting, workflows and reports</li><li>Outlook email, calendar and Teams</li><li>Email campaigns, landing pages and sequences</li><li>Every AI agent: outreach, deal updates, meeting briefs and call notes</li><li>A direct line to the people building it</li></ul>
         </div>
         <div class="plan plan-hi">
-          <span class="plan-badge">Locked in for life</span>
+          <span class="plan-badge">A thank-you to beta members</span>
           <h3>After the beta</h3>
-          <div class="plan-price"><span class="pr">$100</span><span class="per">per user / month</span></div>
-          <p class="plan-uk">UK pricing: £75 per user / month</p>
-          <p class="plan-min">For beta members, for as long as you're with us</p>
-          <p class="plan-sum">Everything is included.</p>
-          <ul><li>The CRM, marketing and every AI agent, in one price</li><li>No tiers, no add-ons and no AI markup</li><li>No setup fee and no consultants</li><li>You pay only for your own AI usage, billed by Anthropic directly</li></ul>
+          <div class="plan-price"><span class="pr">To be decided</span></div>
+          <p class="plan-min">Per user, per month</p>
+          <p class="plan-sum">As a brand-new company, we haven't finalized Centaur's pricing yet. It will be charged per user, per month; the exact price is still to be decided.</p>
+          <p class="plan-sum">We know what other CRM tools cost. Rest assured, our mission is to bring you one of the most advanced, automated CRM and sales management systems, at the most competitive price.</p>
+          <p class="plan-sum">As a thank-you to every organization that takes part in our beta, we'll give an ongoing discount off the price, for life, to anyone who chooses to stay with us.</p>
+          <p class="plan-sum">The beta is free to take part in. All you pay for is your own AI usage, which we expect to average $5–$15 per user, per month.</p>
         </div>
       </div>
       <div style="margin-top:24px;"><a class="btn btn-primary" href="#enquire" data-reason="beta">Apply for the beta</a></div>
@@ -873,7 +868,7 @@
           <p style="margin-top:12px;">The cost savings realized through efficiency is impressive. The increase in
             revenue that follows is what makes the switch worthwhile.</p>
           <ul>
-            <li>Free during the beta, then $100 per user per month, locked in for life</li>
+            <li>Free during the beta, and a lifetime discount for beta members who stay</li>
             <li>The full platform, set up the same day with no implementation fee</li>
             <li>A direct line to the people building it</li>
           </ul>
@@ -960,27 +955,12 @@
     var teamHours = perRep * num('cReps') * num('cWeeks');
     $('cPerRep').textContent = (Math.round(perRep * 10) / 10).toLocaleString('en-US') + (perRep === 1 ? ' hour' : ' hours');
     $('cTeamHours').textContent = fmt(teamHours) + ' hours';
-    var cur = $('cCur').value === 'GBP' ? { sym: '£', price: 75 } : { sym: '$', price: 100 };
+    var cur = $('cCur').value === 'GBP' ? { sym: '£' } : { sym: '$' };
     document.querySelectorAll('.cSym').forEach(function (e) { e.textContent = cur.sym; });
     var yearValue = teamHours * num('cRate');
     $('cValue').textContent = cur.sym + fmt(yearValue);
-    // What Centaur costs this team (the beta members' price), and how fast the time saved covers it.
-    var users = Math.max(1, num('cReps'));
-    var monthCost = cur.price * users;
-    var monthValue = yearValue / 12;
-    $('cCost').textContent = cur.sym + fmt(monthCost * 12) + ' a year';
-    $('cCostMonth').textContent = '(' + cur.sym + fmt(monthCost) + ' a month)';
-    if (monthValue > 0 && monthCost > 0) {
-      // Payback: how many months of time saved cover a full year of Centaur.
-      var months = (monthCost * 12) / monthValue;
-      var days = Math.max(1, Math.round(months * 30.4));
-      $('cPayback').textContent = months < 1
-        ? (days < 14 ? days + (days === 1 ? ' day' : ' days') : Math.round(days / 7) + ' weeks')
-        : (Math.round(months * 10) / 10).toLocaleString('en-US') + (Math.round(months * 10) === 10 ? ' month' : ' months');
-      $('cMultiple').textContent = (Math.round((monthValue / monthCost) * 10) / 10).toLocaleString('en-US') + '×';
-    } else { $('cPayback').textContent = '—'; $('cMultiple').textContent = '—'; }
   }
-  // Default hourly cost per currency, at the same rate as the prices ($100 = £75):
+  // Default hourly cost per currency, at roughly the exchange rate:
   // $50 = £37.50. Switching currency swaps the default only if it hasn't been changed.
   var RATE_DEFAULT = { USD: 50, GBP: 37.5 };
   var lastCur = $('cCur').value;

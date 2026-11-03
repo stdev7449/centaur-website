@@ -26,7 +26,7 @@ Centaur was founded and built by a sales professional with 30 years of selling e
 
 ## Pricing
 
-Free during the beta (limited places). When the beta ends, beta members keep Centaur for $100 (£75) per user per month, locked in for life, with everything included: the CRM, marketing and every AI agent. AI usage is billed by the customer's own AI provider at cost, with no markup.
+Free during the beta (limited places). Pricing after the beta isn't finalized yet; it will be per user, per month, at a competitive price, and beta members who stay get an ongoing discount for life. During the beta customers pay only for their own AI usage (expected to average $5–$15 per user per month), billed by their own AI provider at cost, with no markup.
 
 ## Getting started
 
