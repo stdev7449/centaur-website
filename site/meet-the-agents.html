@@ -314,7 +314,9 @@
   vids.forEach(function (v) {
     var b = v.parentElement.querySelector('.vid-play');
     if (b) b.addEventListener('click', function () { v.play(); });
-    v.addEventListener('play', function () { if (b) b.hidden = true; vids.forEach(function (o) { if (o !== v) o.pause(); }); });
+    v.removeAttribute('controls');
+    v.addEventListener('click', function () { if (v.paused && !v.controls) v.play(); });
+    v.addEventListener('play', function () { v.setAttribute('controls', ''); if (b) b.hidden = true; vids.forEach(function (o) { if (o !== v) o.pause(); }); });
     v.addEventListener('ended', function () { if (b) b.hidden = false; });
   });
 })();

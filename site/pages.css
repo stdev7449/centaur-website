@@ -138,7 +138,8 @@ details.faq p { margin-top: 10px; }
 .vid-play svg { margin-left: 4px; }
 .vid-play:hover, .vid-play:focus-visible { background: rgb(139,124,246); }
 .vid-play[hidden] { display: none; }
-@media (max-width: 600px) { .vid-play { width: 64px; height: 64px; } .vid-head .m { display: none; } }
+.vid-play { top: auto; bottom: 9%; transform: translateX(-50%); }
+@media (max-width: 600px) { .vid-play { width: 48px; height: 48px; bottom: 5%; } .vid-head .m { display: none; } }
 
 /* Resources: white papers */
 .wp-list { display: flex; flex-direction: column; gap: 22px; padding-bottom: 80px; }

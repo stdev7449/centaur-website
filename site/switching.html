@@ -139,8 +139,10 @@
 (function () {
   var v = document.getElementById('setupVideo'), b = document.getElementById('setupPlay');
   if (!v || !b) return;
+  v.removeAttribute('controls');
+  v.addEventListener('click', function () { if (v.paused && !v.controls) v.play(); });
   b.addEventListener('click', function () { v.play(); });
-  v.addEventListener('play', function () { b.hidden = true; });
+  v.addEventListener('play', function () { b.hidden = true; v.setAttribute('controls', ''); });
   v.addEventListener('ended', function () { b.hidden = false; });
 })();
 </script>

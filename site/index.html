@@ -174,7 +174,10 @@
   .demo-play svg { margin-left: 4px; }
   .demo-play:hover, .demo-play:focus-visible { transform: translate(-50%, -50%) scale(1.06); background: rgb(139,124,246); }
   .demo-play[hidden] { display: none; }
-  @media (max-width: 600px) { .demo-play { width: 64px; height: 64px; } .hero-shot .panel-tag { display: none; } }
+  /* Below the title card's text, so the headline stays readable before it plays */
+  .demo-play { top: auto; bottom: 9%; transform: translateX(-50%); }
+  .demo-play:hover, .demo-play:focus-visible { transform: translateX(-50%) scale(1.06); }
+  @media (max-width: 600px) { .demo-play { width: 48px; height: 48px; bottom: 5%; } .hero-shot .panel-tag { display: none; } }
   .hero-shot figcaption { margin: 18px auto 0; max-width: 70ch; text-align: center; color: var(--text-dim); font-size: 1.02rem; }
   .hero-shot figcaption b { display: block; font-family: "Archivo", sans-serif; font-size: clamp(1.3rem, 2.6vw, 1.7rem); color: #fff; margin-bottom: 6px; letter-spacing: -0.01em; }
   .story-link { display: inline-block; margin-left: 6px; color: var(--violet-bright); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
@@ -781,8 +784,11 @@
 (function () {
   var v = document.getElementById('demoVideo'), b = document.getElementById('demoPlay');
   if (!v || !b) return;
+  // Controls appear once it's playing, so the title card is clear before then.
+  v.removeAttribute('controls');
   b.addEventListener('click', function () { v.play(); });
-  v.addEventListener('play', function () { b.hidden = true; });
+  v.addEventListener('click', function () { if (v.paused && !v.controls) v.play(); });
+  v.addEventListener('play', function () { b.hidden = true; v.setAttribute('controls', ''); });
   v.addEventListener('ended', function () { b.hidden = false; });
 })();
 </script>
