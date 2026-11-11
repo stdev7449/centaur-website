@@ -42,6 +42,20 @@
   .agents-wrap { padding-bottom: 40px; }
   .agents-next { padding-bottom: 80px; }
   .agents-next a.btn, .agents-next a.btn:hover { color: #0B0A12; text-decoration: none; }
+  .vid.tight { margin: 0; }
+  .flow-sec { padding: 56px 0 64px; background: var(--ground-2); border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft); margin-bottom: 56px; }
+  .flow-head { max-width: 760px; margin-bottom: 36px; }
+  .flow-head h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); margin-top: 12px; }
+  .flow { position: relative; }
+  .flow::before { content: ""; position: absolute; left: 15px; top: 6px; bottom: 6px; width: 2px; background: linear-gradient(var(--line), var(--violet) 12%, var(--violet) 88%, var(--line)); }
+  @media (max-width: 620px) { .flow::before { left: 13px; } }
+  .step { position: relative; padding: 0 0 30px 58px; }
+  .step:last-child { padding-bottom: 0; }
+  .step .node { position: absolute; left: 0; top: 0; width: 32px; height: 32px; border-radius: 50%; background: var(--surface); border: 2px solid var(--violet); color: var(--violet-bright); display: grid; place-items: center; font-family: "IBM Plex Mono", monospace; font-weight: 500; font-size: 13px; box-shadow: 0 0 14px rgba(139,124,246,0.35); }
+  .step h4 { font-family: "Archivo", sans-serif; font-size: 1.1rem; color: var(--text); margin: 0; }
+  .step p { margin: 5px 0 0; font-size: 14.5px; color: var(--text-dim); max-width: 56ch; }
+  .step .tags { margin-top: 9px; display: flex; gap: 7px; flex-wrap: wrap; }
+  .tag { font-family: "IBM Plex Mono", monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--violet-bright); background: var(--violet-wash); border: 1px solid var(--violet-line); border-radius: 6px; padding: 2px 7px; }
 </style>
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
 <script defer src="/_vercel/insights/script.js"></script>
@@ -82,7 +96,7 @@
   <div class="wrap agents-wrap">
       <div class="agents">
 
-        <div class="agent">
+        <div class="agent" id="opener">
           <div class="agent-copy">
             <span class="agent-k">The Opener · Outreach agent</span>
             <h3>Answers the inquiry, books the meeting and opens the deal.</h3>
@@ -95,13 +109,18 @@
             <p class="say">"Thursday at 10 works — I've sent the invite. Ahead of the call,
               roughly how many seats would you be looking at?"</p>
           </div>
-          <div class="mini">
-            <div class="mini-h"><span>AI Activity · real capture</span><span>last 7 days</span></div>
-            <img class="mini-shot" src="shots/ai-activity.jpg" width="1600" height="558" alt="Centaur CRM AI Activity tab summing up the agents' week: emails drafted, deals opened, deal updates and meeting briefs" loading="lazy" />
+          <div class="vid tight">
+            <div class="vid-head"><span class="t">Watch the Opener reply to an inquiry</span><span class="m">2:15</span></div>
+            <div class="vid-box">
+              <video controls playsinline preload="none" width="1920" height="1080" poster="media/centaur-agent-opener-poster.jpg" aria-label="Centaur CRM video: the Opener drafts a reply to an inquiry in the rep's voice, qualifies the prospect and books the call">
+                <source src="media/centaur-agent-opener.mp4" type="video/mp4" />
+              </video>
+              <button class="vid-play" type="button" aria-label="Play: Watch the Opener reply to an inquiry"><svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg></button>
+            </div>
           </div>
         </div>
 
-        <div class="agent">
+        <div class="agent" id="analyst">
           <div class="agent-copy">
             <span class="agent-k">The Analyst · Opportunity agent</span>
             <h3>No more deals going dark on you.</h3>
@@ -113,13 +132,18 @@
             <p class="say">So the answer the buyer gave you last Tuesday is on the opportunity,
               not lost in someone's inbox.</p>
           </div>
-          <div class="mini">
-            <div class="mini-h"><span>opportunity · AI summary and qualification</span><span>real capture</span></div>
-            <img class="mini-shot" src="shots/opp-ai-updates.jpg" width="1600" height="552" alt="Centaur CRM opportunity opened by the AI Outreach Agent, with its email history, deal-risk watch, competitor, written deal summary and completed BANT qualification" loading="lazy" />
+          <div class="vid tight">
+            <div class="vid-head"><span class="t">Watch the Analyst update a deal</span><span class="m">1:51</span></div>
+            <div class="vid-box">
+              <video controls playsinline preload="none" width="1920" height="1080" poster="media/centaur-agent-analyst-poster.jpg" aria-label="Centaur CRM video: the Analyst reads a buyer's email and updates the deal's value, close date, qualification and competitors">
+                <source src="media/centaur-agent-analyst.mp4" type="video/mp4" />
+              </video>
+              <button class="vid-play" type="button" aria-label="Play: Watch the Analyst update a deal"><svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg></button>
+            </div>
           </div>
         </div>
 
-        <div class="agent">
+        <div class="agent" id="briefer">
           <div class="agent-copy">
             <span class="agent-k">The Briefer · Meeting brief agent</span>
             <h3>Walk into every call fully prepared.</h3>
@@ -131,41 +155,131 @@
             <p class="say">Ten minutes before the call, your rep knows the deal inside out, plus
               something about the company that was never in the CRM.</p>
           </div>
-          <div class="mini">
-            <div class="mini-h"><span>Meeting brief</span><span>today's call</span></div>
-            <div class="tr">
-              <div class="tr-sec">Deal summary</div>
-              <div class="tr-line">Proposal stage, 34 days — steady progress, no stalls.</div>
-              <div class="tr-sec">Company research</div>
-              <div class="tr-line">Northwind Logistics opened two new regional depots this quarter; hiring an Ops lead.</div>
-              <div class="tr-sec">Talking points</div>
-              <div class="tr-line">Ask how the new depots are affecting their current tooling.</div>
+          <div class="vid tight">
+            <div class="vid-head"><span class="t">Watch the Briefer prepare a call</span><span class="m">1:33</span></div>
+            <div class="vid-box">
+              <video controls playsinline preload="none" width="1920" height="1080" poster="media/centaur-agent-briefer-poster.jpg" aria-label="Centaur CRM video: the Briefer prepares a meeting brief with the deal history and company research">
+                <source src="media/centaur-agent-briefer.mp4" type="video/mp4" />
+              </video>
+              <button class="vid-play" type="button" aria-label="Play: Watch the Briefer prepare a call"><svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg></button>
             </div>
           </div>
         </div>
 
-        <div class="agent">
+        <div class="agent" id="scribe">
           <div class="agent-copy">
-            <span class="agent-k">The Scribe · The Copywriter · The Co-pilot</span>
-            <h3>And three more, working right alongside your reps.</h3>
-            <p><strong>The Scribe</strong> listens to your recorded Teams calls, writes up what
-              was discussed, what was agreed and the next steps, and updates the deal for you.</p>
-            <p style="margin-top:10px"><strong>The Copywriter</strong> writes a personal version of
-              every email in your outreach sequences, using each person's role, company and
-              industry. A rep approves every one before it goes.</p>
-            <p style="margin-top:10px"><strong>The Co-pilot</strong> answers questions about your
-              pipeline in plain English, logs calls and tasks, and updates deals, but only
-              after you click Apply.</p>
+            <span class="agent-k">The Scribe · Teams call agent</span>
+            <h3>Your calls, written up and filed.</h3>
+            <p>The Scribe listens to your recorded Microsoft Teams calls and writes them up:
+              what was discussed, what was agreed and the next steps. The summary goes on the
+              deal, and anything new the buyer said, like a budget, a date or a new person
+              involved, is added to the record. Nobody types up notes after the call.</p>
+            <p class="say">By the time your rep has closed Teams, the call is on the deal.</p>
           </div>
-          <div class="mini">
-            <div class="mini-h"><span>The Co-pilot · real capture</span><span>ready for a question</span></div>
-            <img class="mini-shot" src="shots/ai-assistant.jpg" width="1600" height="683" alt="The Centaur AI Agent chat page, with suggested questions such as Which deals need attention and Build a plan for opps closing this month" loading="lazy" />
+          <div class="vid tight">
+            <div class="vid-head"><span class="t">Watch the Scribe write up a call</span><span class="m">1:35</span></div>
+            <div class="vid-box">
+              <video controls playsinline preload="none" width="1920" height="1080" poster="media/centaur-agent-scribe-poster.jpg" aria-label="Centaur CRM video: the Scribe writes up a recorded Teams call and updates the deal">
+                <source src="media/centaur-agent-scribe.mp4" type="video/mp4" />
+              </video>
+              <button class="vid-play" type="button" aria-label="Play: Watch the Scribe write up a call"><svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="agent" id="copywriter">
+          <div class="agent-copy">
+            <span class="agent-k">The Copywriter · Sequences</span>
+            <h3>Personal emails, at the scale of a campaign.</h3>
+            <p>The Copywriter writes a personal version of every email in your outreach
+              sequences, using each person's role, company and industry. A rep approves every
+              one before it goes, and if someone replies, their sequence stops straight away,
+              so nobody gets a scripted follow-up after they've answered.</p>
+            <p class="say">Forty personal emails, without writing forty emails.</p>
+          </div>
+          <div class="vid tight">
+            <div class="vid-head"><span class="t">Watch the Copywriter personalize a sequence</span><span class="m">1:37</span></div>
+            <div class="vid-box">
+              <video controls playsinline preload="none" width="1920" height="1080" poster="media/centaur-agent-copywriter-poster.jpg" aria-label="Centaur CRM video: the Copywriter writes a personal version of each sequence email for a rep to approve">
+                <source src="media/centaur-agent-copywriter.mp4" type="video/mp4" />
+              </video>
+              <button class="vid-play" type="button" aria-label="Play: Watch the Copywriter personalize a sequence"><svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="agent" id="copilot">
+          <div class="agent-copy">
+            <span class="agent-k">The Co-pilot · AI assistant</span>
+            <h3>Ask your pipeline anything.</h3>
+            <p>The Co-pilot answers questions about your pipeline in plain English, from
+              the records in your CRM. It can log calls and tasks and update deals too, but only
+              after you click Apply, so nothing changes without you seeing it first.</p>
+            <p class="say">"Which deals are closing this month?" Answered in seconds, with the
+              deals to back it up.</p>
+          </div>
+          <div class="vid tight">
+            <div class="vid-head"><span class="t">Watch the Co-pilot answer a question</span><span class="m">1:33</span></div>
+            <div class="vid-box">
+              <video controls playsinline preload="none" width="1920" height="1080" poster="media/centaur-agent-copilot-poster.jpg" aria-label="Centaur CRM video: the Co-pilot answers questions about the pipeline and stages a change for approval">
+                <source src="media/centaur-agent-copilot.mp4" type="video/mp4" />
+              </video>
+              <button class="vid-play" type="button" aria-label="Play: Watch the Co-pilot answer a question"><svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg></button>
+            </div>
           </div>
         </div>
 
       </div>
       <a class="dl-link" href="downloads/centaur-crm-meet-the-agents.pdf" download><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 20h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Meet the Centaur agents brochure</span><small>PDF · 2 pages</small></a>
   </div>
+  <!-- FLOW -->
+  <section id="flow" class="flow-sec">
+    <div class="wrap">
+      <div class="flow-head">
+        <span class="eyebrow">One inquiry, start to forecast</span>
+        <h2>How a cold email becomes <span style="color:var(--violet-bright);">a deal you can forecast.</span></h2>
+      </div>
+      <div class="flow">
+        <div class="step">
+          <span class="node">1</span>
+          <h4>An inquiry arrives</h4>
+          <p>It could be a reply to a campaign, a message from your website or an introduction someone forwarded. Centaur picks it up in your shared mailbox.</p>
+          <div class="tags"><span class="tag">your email</span><span class="tag">shared mailbox</span></div>
+        </div>
+        <div class="step">
+          <span class="node">2</span>
+          <h4>The outreach agent gets to work</h4>
+          <p>It replies in the rep's voice, handles objections using your battle cards and qualifies the prospect against your methodology as the conversation goes.</p>
+          <div class="tags"><span class="tag">BANT / MEDDPIC</span><span class="tag">battle cards</span><span class="tag">tone match</span></div>
+        </div>
+        <div class="step">
+          <span class="node">3</span>
+          <h4>A meeting is booked</h4>
+          <p>It offers real free times from the rep's calendar, confirms one and sends a proper invite, with a Teams link if that's how you meet.</p>
+          <div class="tags"><span class="tag">calendar</span><span class="tag">Teams link</span></div>
+        </div>
+        <div class="step">
+          <span class="node">4</span>
+          <h4>The deal is created</h4>
+          <p>The account, contact and opportunity are created, with everything the agent learned already on the record and the meeting on the rep's task list.</p>
+          <div class="tags"><span class="tag">auto-qualified</span><span class="tag">methodology data</span></div>
+        </div>
+        <div class="step">
+          <span class="node">5</span>
+          <h4>The opportunity agent takes over</h4>
+          <p>Every reply after that is read for budget, stakeholders, timeline and competitors, and added to the deal. It never overwrites a figure someone typed in.</p>
+          <div class="tags"><span class="tag">silent</span><span class="tag">deal-risk flags</span><span class="tag">rolling summary</span></div>
+        </div>
+        <div class="step">
+          <span class="node">6</span>
+          <h4>The forecast stays honest</h4>
+          <p>The deal's rating and forecast category update based on what's really happening, and a completed demo can move the deal to the next stage using your own workflow rules.</p>
+          <div class="tags"><span class="tag">forecast automation</span><span class="tag">workflows</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <div class="wrap"><div class="doc agents-next">
     <h2>You stay in control</h2>
     <p>By default, every email an agent writes waits for a person to approve it. Once you trust an agent, you can let it send on its own, and one switch pauses all of them. The agents never overwrite a value a person typed in. AI agents are included in the price and run on your own Anthropic account, with no markup from us.</p>
@@ -179,6 +293,8 @@
     <div class="foot-links">
       <a href="index.html">Home</a>
       <a href="meet-the-agents.html">Meet the agents</a>
+      <a href="intelligence.html">Intelligence</a>
+      <a href="roi.html">ROI calculator</a>
       <a href="platform.html">Product tour</a>
       <a href="ai-sales-agents.html">AI agents</a>
       <a href="compare.html">Compare</a>
@@ -191,5 +307,17 @@
     </div>
   </div>
 </footer>
+<script>
+// Each video: the big play button starts it and hides while it plays; starting one pauses the others.
+(function () {
+  var vids = [].slice.call(document.querySelectorAll('.vid-box video'));
+  vids.forEach(function (v) {
+    var b = v.parentElement.querySelector('.vid-play');
+    if (b) b.addEventListener('click', function () { v.play(); });
+    v.addEventListener('play', function () { if (b) b.hidden = true; vids.forEach(function (o) { if (o !== v) o.pause(); }); });
+    v.addEventListener('ended', function () { if (b) b.hidden = false; });
+  });
+})();
+</script>
 </body>
 </html>
