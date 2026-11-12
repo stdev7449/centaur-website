@@ -1,20 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://www.centaurcrm.com/</loc><lastmod>2026-10-27</lastmod><priority>1.0</priority></url>
-  <url><loc>https://www.centaurcrm.com/security.html</loc><lastmod>2026-10-27</lastmod><priority>0.5</priority></url>
+  
+  <url><loc>https://www.centaurcrm.com/security.html</loc><lastmod>2026-11-09</lastmod><priority>0.5</priority></url>
   <url><loc>https://www.centaurcrm.com/privacy.html</loc><lastmod>2026-10-27</lastmod><priority>0.3</priority></url>
   <url><loc>https://www.centaurcrm.com/compare.html</loc><lastmod>2026-10-28</lastmod><priority>0.8</priority></url>
   <url><loc>https://www.centaurcrm.com/centaur-vs-salesforce.html</loc><lastmod>2026-10-28</lastmod><priority>0.7</priority></url>
   <url><loc>https://www.centaurcrm.com/centaur-vs-hubspot.html</loc><lastmod>2026-10-28</lastmod><priority>0.7</priority></url>
   <url><loc>https://www.centaurcrm.com/centaur-vs-pipedrive.html</loc><lastmod>2026-10-28</lastmod><priority>0.7</priority></url>
   <url><loc>https://www.centaurcrm.com/centaur-vs-dynamics-365.html</loc><lastmod>2026-10-31</lastmod><priority>0.7</priority></url>
-  <url><loc>https://www.centaurcrm.com/faq.html</loc><lastmod>2026-10-28</lastmod><priority>0.8</priority></url>
+  
+  <url><loc>https://www.centaurcrm.com/faq.html</loc><lastmod>2026-11-09</lastmod><priority>0.8</priority></url>
   <url><loc>https://www.centaurcrm.com/switching.html</loc><lastmod>2026-10-28</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.centaurcrm.com/our-story.html</loc><lastmod>2026-10-28</lastmod><priority>0.6</priority></url>
+  
+  <url><loc>https://www.centaurcrm.com/our-story.html</loc><lastmod>2026-11-09</lastmod><priority>0.6</priority></url>
   <url><loc>https://www.centaurcrm.com/platform.html</loc><lastmod>2026-11-01</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.centaurcrm.com/meet-the-agents.html</loc><lastmod>2026-11-01</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.centaurcrm.com/meet-the-agents.html</loc><lastmod>2026-11-11</lastmod><priority>0.8</priority></url>
   <url><loc>https://www.centaurcrm.com/ai-sales-agents.html</loc><lastmod>2026-10-31</lastmod><priority>0.8</priority></url>
   <url><loc>https://www.centaurcrm.com/automated-crm-data-entry.html</loc><lastmod>2026-10-31</lastmod><priority>0.8</priority></url>
   <url><loc>https://www.centaurcrm.com/resources.html</loc><lastmod>2026-11-01</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.centaurcrm.com/integrations.html</loc><lastmod>2026-11-01</lastmod><priority>0.8</priority></url>
+  
+  <url><loc>https://www.centaurcrm.com/integrations.html</loc><lastmod>2026-11-09</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.centaurcrm.com/crm-ai-costs.html</loc><lastmod>2026-11-09</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.centaurcrm.com/crm-for-microsoft-365.html</loc><lastmod>2026-11-09</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.centaurcrm.com/intelligence.html</loc><lastmod>2026-11-11</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.centaurcrm.com/roi.html</loc><lastmod>2026-11-11</lastmod><priority>0.7</priority></url>
 </urlset>

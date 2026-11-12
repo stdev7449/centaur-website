@@ -41,12 +41,16 @@ Same-day setup with no implementation fee and no consultants: a guided setup dra
 - [Compare: Centaur vs Salesforce, HubSpot, monday CRM, Dynamics 365 and Pipedrive](https://www.centaurcrm.com/compare.html)
 - [Centaur vs Dynamics 365 Sales](https://www.centaurcrm.com/centaur-vs-dynamics-365.html): for teams on Microsoft 365 choosing between the two
 - [Product tour](https://www.centaurcrm.com/platform.html): real screenshots, the full platform under the agents, integrations and how setup works
-- [Meet the agents](https://www.centaurcrm.com/meet-the-agents.html): the six agents in detail (the Opener, the Analyst, the Briefer, the Scribe, the Copywriter, the Co-pilot), with real screenshots
+- [Meet the agents](https://www.centaurcrm.com/meet-the-agents.html): the six agents in detail (the Opener, the Analyst, the Briefer, the Scribe, the Copywriter, the Co-pilot), with a short video of each one at work, and how an inquiry becomes a forecastable deal
+- [Intelligence and reporting](https://www.centaurcrm.com/intelligence.html): for sales managers; pipeline and forecast, team KPIs and targets, dashboards and reports, Signals and weekly Intelligence findings, all counted from the CRM's own records
+- [ROI calculator](https://www.centaurcrm.com/roi.html): an illustration of the admin hours the agents could give back, from your own numbers
 - [AI sales agents](https://www.centaurcrm.com/ai-sales-agents.html): what each of the six agents does and how you stay in control
 - [Our story](https://www.centaurcrm.com/our-story.html): why a 30-year sales veteran built Centaur
 - [Switching to Centaur](https://www.centaurcrm.com/switching.html): during the beta we guide your import on a Microsoft Teams call, at no cost; your data never leaves your hands
 - [Automated CRM data entry](https://www.centaurcrm.com/automated-crm-data-entry.html): how deals stay up to date from email and Teams calls, and the rules the agents follow
 - [Resources: white papers](https://www.centaurcrm.com/resources.html): five free papers on CRM and AI in sales (speed to lead, the cost of CRM AI, self-updating pipelines, trustworthy AI), emailed on request
+- [How AI is charged](https://www.centaurcrm.com/crm-ai-costs.html): your own Anthropic account, billed at cost; no AI add-on, credits or markup; typical usage $5–$15 per user per month
+- [CRM for Microsoft 365](https://www.centaurcrm.com/crm-for-microsoft-365.html): what Centaur does with Outlook email, the calendar, Teams calls and Teams channels, and the IT setup
 - [Integrations](https://www.centaurcrm.com/integrations.html): available now (Microsoft 365 email, calendar and Teams transcripts, your own Anthropic account, Slack, Teams posts, Apollo/PDL/Lusha/ZoomInfo, imports, forms) and the roadmap (public API, Zapier/Make, SAML SSO with Entra ID/Okta, Teams app, Outlook add-in, Power BI, Google Workspace, Zoom, phone systems, DocuSign/PandaDoc)
 - [FAQ](https://www.centaurcrm.com/faq.html)
 - [Security](https://www.centaurcrm.com/security.html)
