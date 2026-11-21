@@ -1,6 +1,6 @@
 # Centaur CRM
 
-> Centaur CRM is an AI-native CRM for B2B sales teams, with six built-in AI sales agents that answer inbound inquiries, qualify prospects, book meetings, keep deals up to date and prepare reps for calls. It works with Microsoft 365 (Outlook, calendar and Teams). Customers connect their own AI provider and pay it directly, so there is no AI markup and no AI credit allowance. Centaur is in an open beta.
+> Centaur CRM is an AI-native CRM for B2B sales teams, with six built-in AI sales agents that answer inbound inquiries, qualify prospects, book meetings, keep deals up to date and prepare reps for calls. It works with Microsoft 365 (Outlook, calendar and Teams) or Google Workspace (Gmail, Google Calendar and Google Meet; new, in beta). Customers connect their own AI provider and pay it directly, so there is no AI markup and no AI credit allowance. Centaur is in an open beta.
 
 Centaur was founded and built by a sales professional with 30 years of selling experience. The idea: reps should spend their time selling, and the CRM should keep itself up to date from their emails, calls and meetings.
 
@@ -16,13 +16,13 @@ Centaur was founded and built by a sales professional with 30 years of selling e
 
 ## Good fit
 
-- B2B sales teams on Microsoft 365 who want inbound inquiries answered and qualified quickly without hiring more people.
+- B2B sales teams on Microsoft 365 or Google Workspace who want inbound inquiries answered and qualified quickly without hiring more people.
 - Teams that want a CRM that stays up to date from email and calls instead of manual data entry.
 - Teams that want AI without paying a CRM vendor's AI markup or counting credits.
 
 ## Not a fit (today)
 
-- Teams on Google Workspace email: only Microsoft 365 is supported for now.
+- Teams whose email isn't Microsoft 365 or Google Workspace (for example a personal Gmail account or another email host).
 
 ## Pricing
 
@@ -30,7 +30,7 @@ Free during the beta (limited places). Pricing after the beta isn't finalized ye
 
 ## Getting started
 
-Same-day setup with no implementation fee and no consultants: a guided setup drafts a brief about the business from its website, imports existing spreadsheets, and sends the IT admin the Microsoft 365 steps. Beta customers keep a lifetime discount. Contact: info@centaurcrm.com.
+Same-day setup with no implementation fee and no consultants: a guided setup drafts a brief about the business from its website, imports existing spreadsheets, and sends the IT admin the Microsoft 365 or Google Workspace steps. Beta customers keep a lifetime discount. Contact: info@centaurcrm.com.
 
 ## Links
 
@@ -51,7 +51,7 @@ Same-day setup with no implementation fee and no consultants: a guided setup dra
 - [Resources: white papers](https://www.centaurcrm.com/resources.html): five free papers on CRM and AI in sales (speed to lead, the cost of CRM AI, self-updating pipelines, trustworthy AI), emailed on request
 - [How AI is charged](https://www.centaurcrm.com/crm-ai-costs.html): your own Anthropic account, billed at cost; no AI add-on, credits or markup; typical usage $5–$15 per user per month
 - [CRM for Microsoft 365](https://www.centaurcrm.com/crm-for-microsoft-365.html): what Centaur does with Outlook email, the calendar, Teams calls and Teams channels, and the IT setup
-- [Integrations](https://www.centaurcrm.com/integrations.html): available now (Microsoft 365 email, calendar and Teams transcripts, your own Anthropic account, Slack, Teams posts, Apollo/PDL/Lusha/ZoomInfo, imports, forms) and the roadmap (public API, Zapier/Make, SAML SSO with Entra ID/Okta, Teams app, Outlook add-in, Power BI, Google Workspace, Zoom, phone systems, DocuSign/PandaDoc)
+- [Integrations](https://www.centaurcrm.com/integrations.html): available now (Microsoft 365 email, calendar and Teams transcripts; Google Workspace email, calendar and Meet transcripts, in beta; your own Anthropic account, Slack, Teams posts, Apollo/PDL/Lusha/ZoomInfo, imports, forms) and the roadmap (public API, Zapier/Make, SAML SSO with Entra ID/Okta, Teams app, Outlook add-in, Power BI, Zoom, phone systems, DocuSign/PandaDoc)
 - [FAQ](https://www.centaurcrm.com/faq.html)
 - [Security](https://www.centaurcrm.com/security.html)
 - [Privacy](https://www.centaurcrm.com/privacy.html)
