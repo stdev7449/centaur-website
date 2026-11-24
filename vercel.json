@@ -46,6 +46,17 @@
   ],
   "redirects": [
     {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "centaurcrm.com"
+        }
+      ],
+      "destination": "https://www.centaurcrm.com/",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [
         {
