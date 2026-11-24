@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Email campaigns and campaign tracking in Centaur CRM: from first click to closed deal</title>
+<meta name="description" content="Send email campaigns from your own Microsoft 365 mailbox, see who clicked which link and who replied, capture landing-page leads, and see the meetings, deals and pipeline that followed each campaign." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" />
+<link rel="stylesheet" href="pages.css" />
+<meta property="og:title" content="Campaigns and tracking in Centaur CRM" />
+<meta property="og:image" content="https://www.centaurcrm.com/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="canonical" href="https://www.centaurcrm.com/campaigns.html" />
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.centaurcrm.com/"}, {"@type": "ListItem", "position": 2, "name": "Campaigns and tracking", "item": "https://www.centaurcrm.com/campaigns.html"}]}</script>
+<style>
+  :root { --r-m: 14px; --surface-2: #17141F; --violet-wash: rgba(139,124,246,0.12); --violet-line: rgba(139,124,246,0.28); }
+  .agents { display: flex; flex-direction: column; gap: 22px; }
+  .agent { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; padding: 34px; border-radius: var(--r-l); background: var(--surface); border: 1px solid var(--line); }
+  .agent:nth-child(even) .agent-copy { order: 2; }
+  @media (max-width: 900px) { .agent { grid-template-columns: 1fr; gap: 26px; } .agent:nth-child(even) .agent-copy { order: 0; } }
+  @media (max-width: 600px) { .agent { padding: 22px; } }
+  .agent-k { font-family: "IBM Plex Mono", monospace; font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--violet-bright); }
+  .agent h3 { font-size: 1.65rem; margin: 12px 0; color: #fff; }
+  .agent p { color: var(--text-dim); font-size: 15.5px; }
+  .agent .say { margin-top: 16px; font-size: 14px; color: #C6C1E4; border-left: 2px solid var(--violet); padding-left: 14px; font-style: italic; }
+  .mini { background: var(--ground-2); border: 1px solid var(--line); border-radius: var(--r-m); overflow: hidden; }
+  .mini-h { padding: 11px 14px; border-bottom: 1px solid var(--line-soft); font-family: "IBM Plex Mono", monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-mute); display: flex; justify-content: space-between; gap: 10px; }
+  .mini-shot { display: block; width: 100%; height: auto; }
+  .tr { padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+  .tr-sec { font-family: "IBM Plex Mono", monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--violet-bright); }
+  .tr-line { font-size: 13px; color: var(--text-dim); line-height: 1.45; }
+  .dl-link { display: inline-flex; align-items: center; gap: 10px; margin-top: 26px; padding: 11px 18px; border-radius: 999px; border: 1px solid var(--violet-line); background: var(--violet-wash); color: var(--text); font-weight: 600; font-size: 14.5px; }
+  .dl-link:hover { border-color: var(--violet); background: rgba(139,124,246,0.2); }
+  .dl-link svg { width: 17px; height: 17px; color: var(--violet-bright); flex: none; }
+  .dl-link small { font-family: "IBM Plex Mono", monospace; font-size: 11.5px; color: var(--text-mute); font-weight: 500; white-space: nowrap; }
+  .agents-wrap { padding-bottom: 40px; }
+  .agents-next { padding-bottom: 80px; }
+  .agents-next a.btn, .agents-next a.btn:hover { color: #0B0A12; text-decoration: none; }
+  .vid.tight { margin: 0; }
+  .flow-sec { padding: 56px 0 64px; background: var(--ground-2); border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft); margin-bottom: 56px; }
+  .flow-head { max-width: 760px; margin-bottom: 36px; }
+  .flow-head h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); margin-top: 12px; }
+  .flow { position: relative; }
+  .flow::before { content: ""; position: absolute; left: 15px; top: 6px; bottom: 6px; width: 2px; background: linear-gradient(var(--line), var(--violet) 12%, var(--violet) 88%, var(--line)); }
+  @media (max-width: 620px) { .flow::before { left: 13px; } }
+  .step { position: relative; padding: 0 0 30px 58px; }
+  .step:last-child { padding-bottom: 0; }
+  .step .node { position: absolute; left: 0; top: 0; width: 32px; height: 32px; border-radius: 50%; background: var(--surface); border: 2px solid var(--violet); color: var(--violet-bright); display: grid; place-items: center; font-family: "IBM Plex Mono", monospace; font-weight: 500; font-size: 13px; box-shadow: 0 0 14px rgba(139,124,246,0.35); }
+  .step h4 { font-family: "Archivo", sans-serif; font-size: 1.1rem; color: var(--text); margin: 0; }
+  .step p { margin: 5px 0 0; font-size: 14.5px; color: var(--text-dim); max-width: 56ch; }
+  .step .tags { margin-top: 9px; display: flex; gap: 7px; flex-wrap: wrap; }
+  .tag { font-family: "IBM Plex Mono", monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--violet-bright); background: var(--violet-wash); border: 1px solid var(--violet-line); border-radius: 6px; padding: 2px 7px; }
+  .intro-vid { max-width: 880px; margin: 0 auto 34px; }
+  .vid-soon { display: grid; place-items: center; background: radial-gradient(60% 80% at 50% 40%, rgba(120,104,240,0.18), #09090E 70%); }
+  .vid-soon span { font-family: "IBM Plex Mono", monospace; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--text-mute); }
+  .results { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 26px; }
+  @media (max-width: 900px) { .results { grid-template-columns: repeat(2, 1fr); } }
+  .res { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-m); padding: 16px 18px; }
+  .res b { display: block; font-family: "Archivo", sans-serif; color: #fff; font-size: 1.05rem; }
+  .res span { display: block; margin-top: 4px; font-size: 13.5px; color: var(--text-dim); }
+  .page-head .btn, .page-head .btn:hover { color: #0B0A12; text-decoration: none; }
+</style>
+<script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+<script defer src="/_vercel/insights/script.js"></script>
+<script async src="https://app.centaurcrm.com/api/track/site.js" data-site="_SCvZcyOkr5v0d9q4rqL3c0K"></script>
+<script defer src="/consent.js"></script>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="Centaur CRM home">
+      <svg viewBox="0 0 100 100" aria-hidden="true">
+        <g transform="translate(4 6)" stroke="#8B7CF6" stroke-width="2.5" opacity="0.55" stroke-linecap="round">
+          <line x1="58" y1="57" x2="72" y2="42"/><line x1="58" y1="57" x2="34" y2="64"/><line x1="34" y1="64" x2="22" y2="46"/>
+          <line x1="22" y1="46" x2="32" y2="28"/><line x1="32" y1="28" x2="50" y2="17"/><line x1="50" y1="17" x2="72" y2="42"/>
+          <line x1="72" y1="42" x2="32" y2="28"/><line x1="58" y1="57" x2="74" y2="72"/>
+        </g>
+        <g transform="translate(4 6)" fill="#8B7CF6">
+          <circle cx="58" cy="57" r="8"/><circle cx="72" cy="42" r="5.5"/><circle cx="50" cy="17" r="4"/>
+          <circle cx="32" cy="28" r="3.5"/><circle cx="22" cy="46" r="3"/><circle cx="34" cy="64" r="3.5"/><circle cx="74" cy="72" r="2.5"/>
+        </g>
+      </svg>
+      <span>Centaur <span class="nm-2">CRM</span></span>
+    </a>
+    <div class="nav-cta">
+      <a class="back" href="index.html">← Back to home</a>
+      <a class="btn" href="index.html#enquire">Book a demo</a>
+    </div>
+  </div>
+</header>
+<main>
+  <section class="page-head">
+    <div class="wrap">
+      <span class="eyebrow">Campaigns and tracking</span>
+      <h1>From first campaign click <span style="color:var(--violet-bright);">to closed deal.</span></h1>
+      <p class="lead">Centaur runs your email campaigns inside the CRM, so it can follow each buyer
+        from the email to the meeting and the deal. You see who clicked, which link, who replied, and
+        the meetings, deals and pipeline that followed each campaign, without exporting a single list.</p>
+    </div>
+  </section>
+
+  <section class="flow-sec">
+    <div class="wrap">
+      <div class="flow-head">
+        <span class="eyebrow">One buyer's journey</span>
+        <h2>What happens after you press Send.</h2>
+      </div>
+      <div class="flow">
+        <div class="step"><span class="node">1</span>
+          <h4>The campaign goes out</h4>
+          <p>Build it from blocks or a saved template, test two subject lines, and send it from your
+            own Microsoft 365 mailbox to a marketing list that keeps itself up to date. Centaur sends
+            within the hours and time zone you choose, and skips anyone who has unsubscribed,
+            bounced or asked not to be contacted.</p>
+          <div class="tags"><span class="tag">Block composer</span><span class="tag">A/B tests</span><span class="tag">Dynamic lists</span><span class="tag">Sending hours</span></div>
+        </div>
+        <div class="step"><span class="node">2</span>
+          <h4>A buyer clicks a link</h4>
+          <p>Centaur records who clicked and which link. Security scanners that click every link in an
+            email are filtered out, so the click rate is people who clicked out of emails delivered.
+            Links to your own website are tagged, so the visit shows up in your web analytics too.</p>
+          <div class="tags"><span class="tag">Clicks per link</span><span class="tag">Scanners filtered</span><span class="tag">UTM tags</span></div>
+        </div>
+        <div class="step"><span class="node">3</span>
+          <h4>They land on your page and fill in the form</h4>
+          <p>Landing pages are built in Centaur too. A form filled in becomes a lead with the campaign
+            attached, goes to the right rep, and the Opener agent can send the first reply straight away.</p>
+          <div class="tags"><span class="tag">Landing pages</span><span class="tag">Lead routing</span><span class="tag">First reply in minutes</span></div>
+        </div>
+        <div class="step"><span class="node">4</span>
+          <h4>They reply</h4>
+          <p>A reply to the campaign is counted against it, so you see the reply rate as well as the
+            clicks. Out-of-office replies don't count.</p>
+        </div>
+        <div class="step"><span class="node">5</span>
+          <h4>A meeting is booked and a deal opened</h4>
+          <p>When someone who clicked or replied has a meeting booked or a deal opened within 30 days,
+            it appears on that campaign's results, with the pipeline value and what was won. A deal
+            that came from the campaign's landing page always counts.</p>
+          <div class="tags"><span class="tag">Meetings</span><span class="tag">Deals</span><span class="tag">Pipeline</span><span class="tag">Won</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="doc">
+    <h2>What each campaign's results show</h2>
+    <div class="results">
+      <div class="res"><b>Delivered</b><span>Emails that reached an inbox</span></div>
+      <div class="res"><b>Clicked</b><span>People who clicked, out of those delivered</span></div>
+      <div class="res"><b>Replied</b><span>People who replied, and who they were</span></div>
+      <div class="res"><b>Top links</b><span>Which links people clicked, and how many</span></div>
+      <div class="res"><b>Meetings</b><span>Booked within 30 days of a click or reply</span></div>
+      <div class="res"><b>Deals opened</b><span>With links to each deal</span></div>
+      <div class="res"><b>Pipeline</b><span>The value of those deals</span></div>
+      <div class="res"><b>Won</b><span>What those deals closed for</span></div>
+    </div>
+    <h2 style="margin-top:44px;">Honest numbers</h2>
+    <p>Email opens are shown as approximate. Apple Mail and many security tools open every email
+      themselves, so an "open" often isn't a person. That's why Centaur leads with clicks and
+      replies, which are.</p>
+    <p>A meeting or deal is shown as having <em>followed</em> a campaign, not as caused by it. The
+      rule is on the screen: people who clicked or replied, and within 30 days had a meeting booked
+      or a deal opened.</p>
+    <p>Ask the Co-pilot "which campaign brought in the most pipeline this quarter?" and it answers
+      from the same figures.</p>
+  </div></div>
+
+  <div class="wrap"><div class="doc agents-next">
+    <h2>One system from campaign to closed deal</h2>
+    <p>Because campaigns, landing pages, leads and deals live in the same CRM, nothing has to be
+      matched up between a marketing tool and a sales tool. The agents see the same history your reps do.</p>
+    <p><a href="meet-the-agents.html">Meet the agents</a> · <a href="intelligence.html">Intelligence and reporting</a> · <a href="security.html">Security</a></p>
+    <p style="margin-top:26px;"><a class="btn" href="index.html#beta">Apply for the beta</a></p>
+  </div></div>
+</main>
+<footer>
+  <div class="wrap foot">
+    <div>© 2026 Centaur CRM</div>
+    <div class="foot-links">
+      <a href="index.html">Home</a>
+      <a href="meet-the-agents.html">Meet the agents</a>
+      <a href="intelligence.html">Intelligence</a>
+      <a href="campaigns.html">Campaigns</a>
+      <a href="roi.html">ROI calculator</a>
+      <a href="platform.html">Product tour</a>
+      <a href="ai-sales-agents.html">AI agents</a>
+      <a href="compare.html">Compare</a>
+      <a href="resources.html">Resources</a>
+      <a href="integrations.html">Integrations</a>
+      <a href="switching.html">Switching</a>
+      <a href="faq.html">FAQ</a>
+      <a href="security.html">Security</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="login.html">Customer login</a>
+    </div>
+  </div>
+</footer>
+<script>
+// Each video: the big play button starts it and hides while it plays; starting one pauses the others.
+(function () {
+  var vids = [].slice.call(document.querySelectorAll('.vid-box video'));
+  vids.forEach(function (v) {
+    var b = v.parentElement.querySelector('.vid-play');
+    if (b) b.addEventListener('click', function () { v.play(); });
+    v.removeAttribute('controls');
+    v.addEventListener('click', function () { if (v.paused && !v.controls) v.play(); });
+    v.addEventListener('play', function () { v.setAttribute('controls', ''); if (b) b.hidden = true; vids.forEach(function (o) { if (o !== v) o.pause(); }); });
+    v.addEventListener('ended', function () { if (b) b.hidden = false; });
+  });
+})();
+</script>
+</body>
+</html>

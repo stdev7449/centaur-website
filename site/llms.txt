@@ -12,13 +12,15 @@ Centaur was founded and built by a sales professional with 30 years of selling e
 - **Call notes ("The Scribe"):** turns recorded Microsoft Teams calls into a summary of what was discussed, what was agreed and the next steps, and fills in blank fields on the deal.
 - **Sequences ("The Copywriter"):** writes a personal version of each email in an outreach sequence; a rep approves every one before it is sent.
 - **Assistant ("The Co-pilot"):** answers questions about the pipeline in plain English and makes changes only after the user clicks Apply.
-- **A complete CRM underneath:** pipeline and forecasting with forecast automation, multi-currency deals, workflow automation, custom dashboards and reports, email campaigns and landing pages, lead routing, prospecting through a connected data provider such as Apollo, detailed roles and permissions, an audit trail, Slack and Teams notifications, and built-in training guides.
+- **Email campaigns and tracking:** campaigns are built and sent inside the CRM (block composer, saved templates, A/B tests of subject lines and content) from the customer's own Microsoft 365 mailbox, to marketing lists that update themselves, within chosen sending hours and time zone. Unsubscribed, bounced and do-not-contact people are skipped. Each campaign's results show emails delivered, people who clicked (out of those delivered, with security scanners filtered out), which links were clicked, who replied, and the meetings, deals opened, pipeline and won value that followed within 30 days of a click or reply. Opens are shown as approximate, because mail apps and security tools open emails themselves. Landing pages with forms create leads with the campaign attached, route them to a rep, and the Opener agent can send the first reply.
+- **A complete CRM underneath:** pipeline and forecasting with forecast automation, multi-currency deals, workflow automation, custom dashboards and reports, lead routing, prospecting through a connected data provider such as Apollo, detailed roles and permissions, an audit trail, Slack and Teams notifications, and built-in training guides.
 
 ## Good fit
 
 - B2B sales teams on Microsoft 365 or Google Workspace who want inbound inquiries answered and qualified quickly without hiring more people.
 - Teams that want a CRM that stays up to date from email and calls instead of manual data entry.
 - Teams that want AI without paying a CRM vendor's AI markup or counting credits.
+- Teams that want their email campaigns and their pipeline in one place, so they can see which campaigns led to meetings and deals.
 
 ## Not a fit (today)
 
@@ -43,6 +45,7 @@ Same-day setup with no implementation fee and no consultants: a guided setup dra
 - [Product tour](https://www.centaurcrm.com/platform.html): real screenshots, the full platform under the agents, integrations and how setup works
 - [Meet the agents](https://www.centaurcrm.com/meet-the-agents.html): the six agents in detail (the Opener, the Analyst, the Briefer, the Scribe, the Copywriter, the Co-pilot), with a short video of each one at work, and how an inquiry becomes a forecastable deal
 - [Intelligence and reporting](https://www.centaurcrm.com/intelligence.html): for sales managers; pipeline and forecast, team KPIs and targets, dashboards and reports, Signals and weekly Intelligence findings, all counted from the CRM's own records
+- [Campaigns and tracking](https://www.centaurcrm.com/campaigns.html): email campaigns and landing pages inside the CRM; one buyer's journey from campaign sent to click, landing page, reply, meeting and deal; what each campaign's results show
 - [ROI calculator](https://www.centaurcrm.com/roi.html): an illustration of the admin hours the agents could give back, from your own numbers
 - [AI sales agents](https://www.centaurcrm.com/ai-sales-agents.html): what each of the six agents does and how you stay in control
 - [Our story](https://www.centaurcrm.com/our-story.html): why a 30-year sales veteran built Centaur

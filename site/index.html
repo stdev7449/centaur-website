@@ -28,7 +28,7 @@
 {"@context":"https://schema.org","@graph":[
  {"@type":"Organization","@id":"https://www.centaurcrm.com/#org","name":"Centaur CRM","url":"https://www.centaurcrm.com/","logo":"https://www.centaurcrm.com/icon-512.png","email":"info@centaurcrm.com"},
  {"@type":"WebSite","@id":"https://www.centaurcrm.com/#site","url":"https://www.centaurcrm.com/","name":"Centaur CRM","publisher":{"@id":"https://www.centaurcrm.com/#org"}},
- {"@type":"SoftwareApplication","name":"Centaur CRM","applicationCategory":"BusinessApplication","applicationSubCategory":"CRM","operatingSystem":"Web","url":"https://www.centaurcrm.com/","description":"An AI-native sales CRM with six built-in AI agents that answer inquiries, qualify leads, book meetings and keep deals current. Bring your own AI key, with no markup.","publisher":{"@id":"https://www.centaurcrm.com/#org"}},
+ {"@type":"SoftwareApplication","name":"Centaur CRM","applicationCategory":"BusinessApplication","applicationSubCategory":"CRM","operatingSystem":"Web","url":"https://www.centaurcrm.com/","description":"An AI-native sales CRM with six built-in AI agents that answer inquiries, qualify leads, book meetings and keep deals current. Bring your own AI key, with no markup.","featureList":["AI agent that answers and qualifies inbound inquiries and books meetings","AI agent that keeps deals up to date from emails and call notes","Morning meeting briefs","Microsoft Teams call summaries","AI-personalised outreach sequences, approved by a person","AI assistant for pipeline questions","Email campaigns sent from your own Microsoft 365 mailbox, with A/B tests","Campaign tracking: clicks per link, replies, and the meetings, deals and pipeline that followed","Landing pages with forms that create leads","Pipeline, forecasting, dashboards and reports","Bring your own Anthropic API key, billed at cost with no markup","Works with Microsoft 365 and Google Workspace (beta)"],"publisher":{"@id":"https://www.centaurcrm.com/#org"}},
  {"@type":"VideoObject","name":"Centaur CRM demo: one inquiry, start to finish","description":"The AI agents answer an inquiry, book a call, create and qualify the deal, then keep it up to date as the buyer's plans change. Real app screens with fictional demo data.","thumbnailUrl":"https://www.centaurcrm.com/media/centaur-demo-poster.jpg","contentUrl":"https://www.centaurcrm.com/media/centaur-demo.mp4","uploadDate":"2026-10-31","duration":"PT2M24S","publisher":{"@id":"https://www.centaurcrm.com/#org"}}
 ]}
 </script>
@@ -563,7 +563,7 @@
   .answer p { color: var(--text-dim); font-size: 1.08rem; }
   .answer strong { color: var(--text); }
   .answer .founder { margin-top: 12px; font-size: .98rem; color: var(--text-mute); }
-  .explore { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+  .explore { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
   @media (max-width: 1080px) { .explore { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 560px) { .explore { grid-template-columns: 1fr; } }
   .xcard { display: flex; flex-direction: column; gap: 8px; padding: 24px; border: 1px solid var(--line); border-radius: var(--r-l); background: var(--surface); transition: border-color .2s, transform .2s; }
@@ -611,6 +611,7 @@
     <nav class="nav-links" aria-label="Primary">
       <a href="meet-the-agents.html">The agents</a>
       <a href="intelligence.html">Intelligence</a>
+      <a href="campaigns.html">Campaigns</a>
       <a href="roi.html">ROI</a>
       <a href="switching.html">Onboarding</a>
       <a href="platform.html">Product tour</a>
@@ -631,12 +632,12 @@
       <div class="hero-top">
         <span class="eyebrow">The AI-native CRM</span>
         <h1>How much more would your reps sell <span class="glow">without the admin?</span></h1>
-        <p class="lead">Centaur is the CRM with six AI agents built in. They answer inquiries, book meetings and keep every deal up to date from your emails and calls, so your reps can get back to selling.</p>
+        <p class="lead">Centaur is the CRM with six AI agents built in. They answer inquiries, book meetings and keep every deal up to date from your emails and calls, so your reps can get back to selling. Your email campaigns run in it too, so you can follow each buyer from first click to closed deal.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#enquire" data-reason="demo">Book a demo</a>
-          <a class="btn btn-ghost" href="platform.html">Take the product tour</a>
+          <a class="btn btn-primary" href="#enquire" data-reason="beta">Apply for the beta</a>
+          <a class="btn btn-ghost" href="#demoVideo" id="heroWatch">Watch the 2-minute demo</a>
         </div>
-        <p class="hero-note">// live the same day · no implementation fee · no consultants</p>
+        <p class="hero-note">// free during the beta · live the same day · your own AI key, no markup · <a href="security.html" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">how we protect your data</a></p>
       </div>
       <figure class="hero-shot">
         <div class="panel">
@@ -690,6 +691,8 @@
         <a class="xcard" href="intelligence.html"><span class="xk">Intelligence</span><b>For sales managers</b><span class="xd">Pipeline and forecast, team KPIs, dashboards, reports, signals and weekly findings.</span><span class="xgo">See the reporting →</span></a>
         <a class="xcard" href="roi.html"><span class="xk">ROI</span><b>What's the admin costing you?</b><span class="xd">Put in your own numbers and see the hours the agents could give back.</span><span class="xgo">Work it out →</span></a>
         <a class="xcard" href="switching.html"><span class="xk">Onboarding</span><b>Live the same day</b><span class="xd">How setup and moving your data work, with a step-by-step video.</span><span class="xgo">See how to switch →</span></a>
+        <a class="xcard" href="campaigns.html"><span class="xk">Campaigns &amp; tracking</span><b>From first click to closed deal</b><span class="xd">Email campaigns and landing pages in the CRM, with the clicks, replies, meetings and pipeline each campaign led to.</span><span class="xgo">Follow a buyer's journey →</span></a>
+        <a class="xcard" href="security.html"><span class="xk">Security &amp; your AI</span><b>Your data, your AI key</b><span class="xd">How customer emails and call notes are protected, and why your own Anthropic account doesn't train on your data.</span><span class="xgo">See how it's protected →</span></a>
       </div>
     </div>
   </section>
@@ -702,8 +705,9 @@
         <div class="enq-copy">
           <span class="tag-open"><span class="pulse"></span> Beta program · open now</span>
           <h2>Give your sales team <span class="hl">their time back.</span></h2>
-          <p>Book a 30-minute call with us today, and we'll explain where we feel we can help you
-            run your teams more efficiently and free up time for your reps to spend more time selling.</p>
+          <p>Apply for the beta and we'll set you up. If you'd rather see it first, book a 30-minute call
+            and we'll explain where we feel we can help you run your teams more efficiently and free up
+            time for your reps to spend more time selling.</p>
           <p style="margin-top:12px;">The cost savings realized through efficiency is impressive. The increase in
             revenue that follows is what makes the switch worthwhile.</p>
           <ul>
@@ -764,6 +768,7 @@
       <a href="#why">Why Centaur</a>
       <a href="meet-the-agents.html">Meet the agents</a>
       <a href="intelligence.html">Intelligence</a>
+      <a href="campaigns.html">Campaigns</a>
       <a href="roi.html">ROI calculator</a>
       <a href="platform.html">Product tour</a>
       <a href="#enquire" data-reason="demo">Book a demo</a>
@@ -793,6 +798,9 @@
   v.addEventListener('click', function () { if (v.paused && !v.controls) v.play(); });
   v.addEventListener('play', function () { b.hidden = true; v.setAttribute('controls', ''); });
   v.addEventListener('ended', function () { b.hidden = false; });
+  // "Watch the 2-minute demo": bring the video into view and start it.
+  var w = document.getElementById('heroWatch');
+  if (w) w.addEventListener('click', function (e) { e.preventDefault(); v.scrollIntoView({ behavior: 'smooth', block: 'center' }); v.play(); });
 })();
 </script>
 <script>
@@ -805,6 +813,9 @@
     document.querySelectorAll("[data-reason]").forEach(function (a) {
       a.addEventListener("click", function () { if (reason) reason.value = a.getAttribute("data-reason"); });
     });
+    // Arriving from another page at #beta or #demo presets it too.
+    var h = location.hash.replace("#", "");
+    if (reason && (h === "beta" || h === "demo")) reason.value = h;
   })();
 
   // ── Announcement bar dismiss (session-only, no need to persist longer) ──
