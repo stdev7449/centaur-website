@@ -162,6 +162,7 @@ details.faq p { margin-top: 10px; }
 .wp-form input:focus, .wp-form select:focus { outline: 2px solid var(--violet-bright); outline-offset: 1px; border-color: var(--violet); }
 .wp-form .btn { margin-top: 14px; justify-content: center; }
 .wp-consent { font-size: 12px; color: var(--text-mute); margin: 14px 0 0; }
+.wp-consent a { text-decoration: underline; text-underline-offset: 2px; }
 .wp-close { position: absolute; top: 12px; right: 14px; width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--line); background: transparent; color: var(--text-dim); font-size: 20px; cursor: pointer; }
 .wp-trap { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 @media (max-width: 700px) { .wp { grid-template-columns: 1fr; padding: 18px; } .wp-cover { max-width: 200px; } }
