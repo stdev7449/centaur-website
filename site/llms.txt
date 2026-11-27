@@ -2,8 +2,6 @@
 
 > Centaur CRM is an AI-native CRM for B2B sales teams, with six built-in AI sales agents that answer inbound inquiries, qualify prospects, book meetings, keep deals up to date and prepare reps for calls. It works with Microsoft 365 (Outlook, calendar and Teams). Customers connect their own AI provider and pay it directly, so there is no AI markup and no AI credit allowance. Centaur is in an open beta.
 
-Centaur CRM (centaurcrm.com) is not affiliated with Centaur.ai, Centaur Labs or Centaur TBMS.
-
 Centaur was founded and built by a sales professional with 30 years of selling experience. The idea: reps should spend their time selling, and the CRM should keep itself up to date from their emails, calls and meetings.
 
 ## What it does
